@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
-export class AccountInfoPage extends React.Component {
+export default class AccountInfoPage extends React.Component {
   constructor (props) {
     super(props)
     this.setState({})

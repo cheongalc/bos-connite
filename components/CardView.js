@@ -17,9 +17,12 @@ export class CardView extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#fff',
+    backgroundColor: 'red',
+    color: '#fff',
     shadowColor: 'black',
     shadowOpacity: 0.35,
-    shadowRadius: 10
+    shadowRadius: 10,
+    padding: 10,
+    margin: 10
   }
 })

@@ -7,11 +7,14 @@ export default class HomePage extends React.Component {
     super(props)
     this.setState({})
   }
+  static navigationOptions = {
+    title: 'HomePage'
+  }
   render () {
     const {navigate} = this.props.navigation
     return (
       <View style={styles.container}>
-        <CardView onPress={() => navigate('AccountInfoPage', {name: 'Test'})} />
+        <CardView onClick={() => navigate('AccountInfoPage')} />
       </View>
     )
   }
