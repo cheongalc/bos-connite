@@ -1,0 +1,5 @@
+{
+    "tableName": "chikaDB",
+    "partitionKeyName": "userId",
+    "partitionKeyType": "S"
+}

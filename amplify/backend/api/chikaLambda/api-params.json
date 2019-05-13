@@ -1,0 +1,35 @@
+{
+    "paths": [
+        {
+            "name": "/getSuggestions",
+            "lambdaFunction": "chikaLambda",
+            "privacy": {
+                "private": true,
+                "auth": []
+            }
+        }
+    ],
+    "resourceName": "chikaLambda",
+    "apiName": "chikaLambda",
+    "functionArns": [
+        {
+            "lambdaFunction": "chikaLambda"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "connite-dev-20190513204834-authRole",
+        "unAuthRoleName": "connite-dev-20190513204834-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "chikaLambda",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
