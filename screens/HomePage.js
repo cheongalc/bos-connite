@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, View } from 'react-native'
+import { StyleSheet, View, TouchableOpacity } from 'react-native'
 import { CardView } from '../components/CardView'
 
 export default class HomePage extends React.Component {
@@ -11,10 +11,13 @@ export default class HomePage extends React.Component {
     title: 'HomePage'
   }
   render () {
-    const {navigate} = this.props.navigation
     return (
-      <View style={styles.container}>
-        <CardView onClick={() => navigate('AccountInfoPage')} />
+      <View>
+        <TouchableOpacity
+          style={styles.container}
+          onPress={() => this.props.navigation.navigate('AccountInfoPage')} >
+          <CardView />
+        </TouchableOpacity>
       </View>
     )
   }
