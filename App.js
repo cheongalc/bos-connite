@@ -9,7 +9,13 @@ const MainNavigator = createStackNavigator(
     AccountInfoPage: {screen: AccountInfoPage},
     QuestionnairePage: {screen: QuestionnairePage}
   },
-  { initialRouteName: 'HomePage' }
+  {
+    initialRouteName: 'HomePage',
+    headerMode: 'none',
+    navigationOptions: {
+      headerVisible: false
+    }
+  }
 )
 
 const App = createAppContainer(MainNavigator)

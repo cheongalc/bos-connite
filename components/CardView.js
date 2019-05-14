@@ -1,15 +1,11 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
-export class CardView extends React.Component {
-  constructor (props) {
-    super(props)
-    this.setState({})
-  }
+export default class CardView extends React.Component {
   render () {
     return (
       <View style={styles.container}>
-        <Text>hi there i am a card</Text>
+
       </View>
     )
   }
@@ -17,7 +13,6 @@ export class CardView extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'red',
     color: '#fff',
     shadowColor: 'black',
     shadowOpacity: 0.35,
