@@ -44,14 +44,7 @@ export default class UserHeader extends React.Component {
 const styles = StyleSheet.create({
   button: {
     width: '100%',
-    height: '100%',
-    backgroundColor: 'rgba(255, 255, 255, 0.01)',
-    shadowColor: 'black',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.35,
-    shadowRadius: 5,
-    elevation: 5,
-    zIndex: 2
+    height: '100%'
   },
   container: {
     flex: 1,
