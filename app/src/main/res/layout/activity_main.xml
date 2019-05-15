@@ -9,7 +9,6 @@
     tools:context=".MainActivity">
 
     <!--User Header CardView-->
-
     <android.support.v7.widget.CardView
         android:id="@+id/cv_UserHeaderCard"
         android:layout_width="match_parent"
@@ -18,9 +17,11 @@
         android:layout_marginTop="@dimen/cardViewDefaultMargin"
         android:layout_marginLeft="@dimen/cardViewDefaultMargin"
         android:layout_marginRight="@dimen/cardViewDefaultMargin"
-        app:cardBackgroundColor="@color/cardview_dark_background"
+        android:onClick="startUserInfoActivity"
+        app:cardBackgroundColor="@color/userHeaderBackground"
         app:contentPadding="@dimen/cardViewDefaultPadding"
-        app:cardElevation="2dp">
+        app:cardElevation="@dimen/cardViewElevation"
+        app:cardCornerRadius="@dimen/cardViewCornerRadius">
         <LinearLayout
             android:id="@+id/ll_UserHeaderContainer"
             android:layout_width="match_parent"
@@ -28,38 +29,62 @@
             android:layout_gravity="center">
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/civ_UserProfileImage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.25"
-                android:src="@drawable/ic_launcher_background"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginRight="@dimen/cardViewDefaultPadding"
+                android:src="@mipmap/avatar"
                 app:civ_border_width="2dp"
-                app:civ_border_color="@color/colorPrimary"/>
+                app:civ_border_color="@color/colorWhite"
+                android:elevation="@dimen/cardViewElevation"/>
             <RelativeLayout
+                android:id="@+id/rl_UserHeaderTextContainer"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
-                android:layout_weight="0.75"
                 android:orientation="vertical">
                 <LinearLayout
+                    android:id="@+id/ll_UserHeaderTextInnerContainer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:orientation="vertical">
                     <TextView
+                        android:id="@+id/tv_UserName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="bottom"
                         android:text="Justin Loh"
-                        android:textSize="30dp"/>
+                        android:textSize="25sp"
+                        android:textColor="@color/colorWhite"/>
                     <TextView
+                        android:id="@+id/tv_UserSub"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="A rather gay chem teacher in HCI."/>
+                        android:gravity="top"
+                        android:text="A rather gay chem teacher in HCI."
+                        android:textColor="@color/colorWhite"/>
                 </LinearLayout>
-
             </RelativeLayout>
         </LinearLayout>
-
     </android.support.v7.widget.CardView>
 
+    <com.connite.ExpandableHeightListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cv_UserHeaderCard"
+        android:layout_margin="@dimen/elementDefaultMargin"/>
+
+    <!--Floating Action Button-->
+    <ImageButton
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="@dimen/fabMargin"
+        android:layout_marginBottom="@dimen/fabMargin"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:src="@mipmap/fab"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:onClick="startSuggestionsActivity"/>
 </RelativeLayout>
