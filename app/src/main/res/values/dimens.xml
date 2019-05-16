@@ -6,7 +6,7 @@
     <!--Main Activity Dimensions-->
     <dimen name="cardViewDefaultMargin">10dp</dimen>
     <dimen name="cardViewDefaultPadding">12dp</dimen>
-    <dimen name="cardViewDoubleMargin">32dp</dimen>
+    <dimen name="cardViewDoubleMargin">20dp</dimen>
     <dimen name="cardViewCornerRadius">16dp</dimen>
     <dimen name="cardViewElevation">4dp</dimen>
     <dimen name="fabMargin">15dp</dimen>

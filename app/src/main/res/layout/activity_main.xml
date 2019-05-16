@@ -109,6 +109,6 @@
         android:scaleType="fitCenter"
         android:adjustViewBounds="true"
         android:src="@mipmap/fab"
-        android:background="?attr/selectableItemBackgroundBorderless"
+        android:background="@null"
         android:onClick="startSuggestionsActivity"/>
 </RelativeLayout>
