@@ -2,12 +2,15 @@ package com.connite;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,7 +43,8 @@ public class ActivityItemDataAdapter extends ArrayAdapter<ActivityItemData> {
         viewHolder.name.setText(currActivityItem.getName());
         viewHolder.description.setText(currActivityItem.getDescription());
         viewHolder.namedLocation.setText(currActivityItem.getNamedLocation());
-        viewHolder.icon.setImageURI(currActivityItem.getImageUri());
+        Log.d("uri", currActivityItem.getImageUrl());
+        Glide.with(context).load(currActivityItem.getImageUrl()).placeholder(R.mipmap.chika).into(viewHolder.icon);
         return convertView;
     }
 

@@ -3,7 +3,6 @@ package com.connite;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -13,10 +12,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static String logTag = "MAINACTIVITY";
-
     private ExpandableHeightListView ehlv_ActivityItemList;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void updateActivityItemList() {
         ArrayList<ActivityItemData> arrayList = new ArrayList<>();
-        Log.d(logTag, String.valueOf(Uri.parse("https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")));
         for (int i = 0; i < 10; i++) {
             arrayList.add(
                     new ActivityItemData(
@@ -36,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
                             "Test Location",
                             1,
                             1,
-                            Uri.parse("https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")));
+                            "https://i.pinimg.com/originals/25/70/46/257046ef41da1b60c4505161754cd8f5.png"));
         }
         ArrayAdapter<ActivityItemData> adapter = new ActivityItemDataAdapter(this, 0, arrayList);
         ehlv_ActivityItemList = findViewById(R.id.ehlv_ActivityItemList);

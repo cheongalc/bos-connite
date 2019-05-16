@@ -8,15 +8,15 @@ public class ActivityItemData {
     private String namedLocation;
     private long latitude;
     private long longitude;
-    private Uri imageUri;
+    private String imageUrl;
 
-    public ActivityItemData(String name, String description, String namedLocation, long latitude, long longitude, Uri imageUri) {
+    public ActivityItemData(String name, String description, String namedLocation, long latitude, long longitude, String imageUrl) {
         this.name = name;
         this.description = description;
         this.namedLocation = namedLocation;
         this.latitude = latitude;
         this.longitude = longitude;
-        this.imageUri = imageUri;
+        this.imageUrl = imageUrl;
     }
 
     public String getName() {
@@ -39,7 +39,7 @@ public class ActivityItemData {
         return longitude;
     }
 
-    public Uri getImageUri() {
-        return imageUri;
+    public String getImageUrl() {
+        return imageUrl;
     }
 }
