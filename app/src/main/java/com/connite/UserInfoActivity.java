@@ -3,7 +3,7 @@ package com.connite;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class AccountInfoActivity extends AppCompatActivity {
+public class UserInfoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

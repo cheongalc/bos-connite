@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".SuggestionsActivity"></activity>
-        <activity android:name=".AccountInfoActivity" />
+        <activity android:name=".UserInfoActivity" />
         <activity android:name=".QuestionnaireActivity" />
         <activity
             android:name=".MainActivity"

@@ -1,12 +1,10 @@
 package com.connite;
 
-import android.net.Uri;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -18,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        checkFirstTimeRun();
         updateActivityItemList();
     }
 
@@ -40,10 +39,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void startSuggestionsActivity(View view) {
-        Toast.makeText(this, "Suggestions", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, SuggestionsActivity.class);
+        startActivity(intent);
     }
 
     public void startUserInfoActivity(View view) {
-        Toast.makeText(this, "User Info", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, UserInfoActivity.class);
+        startActivity(intent);
+    }
+
+    public void checkFirstTimeRun() {
+        
     }
 }
