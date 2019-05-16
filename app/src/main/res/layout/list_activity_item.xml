@@ -13,7 +13,7 @@
         app:cardElevation="0dp"
         android:id="@+id/cv_ActivityItemCard"
         android:layout_width="match_parent"
-        android:layout_height="256dp"
+        android:layout_height="@dimen/activityItemHeight"
         app:cardBackgroundColor="@color/colorLightBlue"
         app:cardCornerRadius="@dimen/cardViewCornerRadius">
 
@@ -43,11 +43,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.5"
-                android:layout_margin="@dimen/cardViewDefaultPadding"
-                android:paddingLeft="@dimen/cardViewDefaultPadding"
-                android:paddingRight="@dimen/cardViewDefaultPadding"
-                android:paddingTop="@dimen/cardViewDefaultPadding">
-
+                android:layout_margin="@dimen/cardViewDefaultPadding">
                 <TextView
                     android:id="@+id/tv_ActivityName"
                     android:layout_width="match_parent"
@@ -55,36 +51,43 @@
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
                     android:text="Activity Name"
-                    android:textColor="@color/colorBlack"
-                    android:textSize="20sp"/>
+                    android:textColor="@color/colorNavyBlue"
+                    android:textStyle="bold"
+                    android:textSize="22.5sp"/>
 
                 <TextView
                     android:id="@+id/tv_ActivityDescription"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tv_ActivityName"
-                    android:textColor="@color/colorBlack"
-                    android:text="Activity Description"/>
+                    android:textColor="@color/colorLightGray"
+                    android:text="Activity Description"
+                    android:textStyle="bold"
+                    android:textSize="18sp"/>
 
                 <LinearLayout
                     android:id="@+id/ll_ActivityItemLocationContainer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/tv_ActivityDescription">
+                    android:layout_above="@id/btn_NavigateActivity">
 
                     <ImageView
                         android:id="@+id/iv_ActivityItemLocationIcon"
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:src="@drawable/ic_launcher_background"/>
+                        android:src="@mipmap/ic_location"/>
 
                     <TextView
                         android:id="@+id/tv_ActivityNamedLocation"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginLeft="4dp"
-                        android:text="Activity Location"
-                        android:textColor="@color/colorBlack"
+                        android:text="Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet,"
+                        android:ellipsize="end"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:maxLines="4"
+                        android:textColor="@color/colorLinkBlue"
                         android:gravity="center_vertical"/>
 
                 </LinearLayout>
@@ -106,7 +109,7 @@
     <!--Shadow CardView-->
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="256dp"
+        android:layout_height="@dimen/activityItemHeight"
         android:layout_marginTop="5dp"
         app:cardCornerRadius="@dimen/cardViewShadowCornerRadius"
         app:cardElevation="-1dp"

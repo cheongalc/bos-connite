@@ -13,4 +13,8 @@
     <dimen name="cardViewShadowCornerRadius">14dp</dimen>
     <dimen name="cardViewElevation">4dp</dimen>
     <dimen name="fabMargin">10dp</dimen>
+    <dimen name="userHeaderHeight">88dp</dimen>
+
+    <!--Activity Item Dimensions-->
+    <dimen name="activityItemHeight">325dp</dimen>
 </resources>

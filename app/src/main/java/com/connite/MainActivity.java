@@ -26,12 +26,12 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < 10; i++) {
             arrayList.add(
                     new ActivityItemData(
-                            "Test Activity",
-                            "Test Description",
-                            "Test Location",
+                            "Swimming",
+                            "Swimming builds endurance, muscle strength, and maintains a healthy heart and lungs.",
+                            "Lorong 6 Toa Payoh, Swimming Complex, Singapore 319392",
                             1,
                             1,
-                            "https://i.pinimg.com/originals/25/70/46/257046ef41da1b60c4505161754cd8f5.png"));
+                            "https://lh5.googleusercontent.com/p/AF1QipNG0TFYMjChYBEpanHyTTffOBF-UQkPAvB7E9zi=w203-h114-k-no"));
         }
         ArrayAdapter<ActivityItemData> adapter = new ActivityItemDataAdapter(this, 0, arrayList);
         ehlv_ActivityItemList = findViewById(R.id.ehlv_ActivityItemList);
