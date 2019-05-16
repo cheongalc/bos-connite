@@ -2,8 +2,6 @@ package com.connite;
 
 import android.net.Uri;
 
-import java.net.URI;
-
 public class ActivityItemData {
     private String name;
     private String description;

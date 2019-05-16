@@ -12,30 +12,30 @@
     <android.support.v7.widget.CardView
         android:id="@+id/cv_UserHeaderCard"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="88dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="@dimen/cardViewDefaultMargin"
         android:layout_marginLeft="@dimen/cardViewDefaultMargin"
         android:layout_marginRight="@dimen/cardViewDefaultMargin"
         android:onClick="startUserInfoActivity"
-        app:cardBackgroundColor="@color/userHeaderBackground"
-        app:contentPadding="@dimen/cardViewDefaultPadding"
         app:cardElevation="@dimen/cardViewElevation"
         app:cardCornerRadius="@dimen/cardViewCornerRadius">
         <LinearLayout
             android:id="@+id/ll_UserHeaderContainer"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="center">
+            android:layout_gravity="center"
+            android:background="@mipmap/ic_user_header_background"
+            android:padding="@dimen/cardViewDefaultPadding">
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/civ_UserProfileImage"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
-                android:layout_marginRight="@dimen/cardViewDefaultPadding"
+                android:layout_marginEnd="@dimen/cardViewDefaultPadding"
+                android:layout_gravity="center_vertical"
                 android:src="@mipmap/avatar"
                 app:civ_border_width="2dp"
-                app:civ_border_color="@color/colorWhite"
-                android:elevation="@dimen/cardViewElevation"/>
+                app:civ_border_color="@color/colorWhite" />
             <RelativeLayout
                 android:id="@+id/rl_UserHeaderTextContainer"
                 android:layout_width="match_parent"
@@ -53,15 +53,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="bottom"
-                        android:text="User Name"
-                        android:textSize="25sp"
+                        android:text="Justin Loh"
+                        android:textSize="30sp"
+                        android:textStyle="bold"
                         android:textColor="@color/colorWhite"/>
                     <TextView
                         android:id="@+id/tv_UserSub"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="top"
-                        android:text="Lorem ipsum dolor sit amet."
+                        android:text="A rather mildly gay chem teacher."
                         android:textColor="@color/colorWhite"/>
                 </LinearLayout>
             </RelativeLayout>
@@ -76,9 +77,7 @@
             android:id="@+id/ehlv_ActivityItemList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/elementDefaultMargin"
-            android:layout_marginLeft="@dimen/elementDefaultMargin"
-            android:paddingTop="120dp"/>
+            android:paddingTop="150dp"/>
 
     </ScrollView>
 

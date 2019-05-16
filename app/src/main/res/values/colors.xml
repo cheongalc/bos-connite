@@ -7,4 +7,5 @@
     <color name="colorBlack">#000000</color>
     <color name="userHeaderBackground">#4254F4</color>
     <color name="colorTransparent">@android:color/transparent</color>
+    <color name="colorLightBlue">#E5F4FBff</color>
 </resources>

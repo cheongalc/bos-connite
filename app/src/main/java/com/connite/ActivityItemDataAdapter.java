@@ -2,7 +2,6 @@ package com.connite;
 
 import android.app.Activity;
 import android.content.Context;
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,7 +27,7 @@ public class ActivityItemDataAdapter extends ArrayAdapter<ActivityItemData> {
         ActivityItemViewHolder viewHolder;
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.fragment_activity_item, null);
+            convertView = inflater.inflate(R.layout.list_activity_item, null);
             viewHolder = new ActivityItemViewHolder();
             viewHolder.name = convertView.findViewById(R.id.tv_ActivityName);
             viewHolder.description = convertView.findViewById(R.id.tv_ActivityDescription);
