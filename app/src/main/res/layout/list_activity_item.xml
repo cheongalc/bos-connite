@@ -17,8 +17,6 @@
         app:cardBackgroundColor="@color/colorLightBlue"
         app:cardCornerRadius="@dimen/cardViewCornerRadius">
 
-
-
         <LinearLayout
             android:id="@+id/ll_ActivityItemBodyContainer"
             android:layout_width="match_parent"
