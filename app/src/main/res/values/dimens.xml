@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--Master Dimensions-->
-    <dimen name="elementDefaultMargin">16dp</dimen>
+    <dimen name="elementDefaultMargin">10dp</dimen>
 
     <!--Main Activity Dimensions-->
     <dimen name="cardViewDefaultMargin">10dp</dimen>
     <dimen name="cardViewDefaultPadding">12dp</dimen>
+    <dimen name="cardViewMediumPadding">14dp</dimen>
+    <dimen name="cardViewLargePadding">16dp</dimen>
     <dimen name="cardViewDoubleMargin">20dp</dimen>
     <dimen name="cardViewCornerRadius">16dp</dimen>
     <dimen name="cardViewShadowCornerRadius">14dp</dimen>
     <dimen name="cardViewElevation">4dp</dimen>
-    <dimen name="fabMargin">15dp</dimen>
+    <dimen name="fabMargin">10dp</dimen>
 </resources>

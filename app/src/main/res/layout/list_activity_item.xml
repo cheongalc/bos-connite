@@ -4,14 +4,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:paddingTop="@dimen/cardViewDefaultMargin"
+    android:paddingStart="@dimen/cardViewDoubleMargin"
+    android:paddingEnd="@dimen/cardViewDoubleMargin"
     android:paddingBottom="@dimen/cardViewDefaultPadding">
+
     <android.support.v7.widget.CardView
         android:id="@+id/cv_ActivityItemCard"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/elementDefaultMargin"
-        android:layout_marginStart="@dimen/cardViewDoubleMargin"
-        android:layout_marginEnd="@dimen/cardViewDoubleMargin"
+        android:layout_height="256dp"
         app:cardBackgroundColor="@color/colorLightBlue"
         app:cardCornerRadius="@dimen/cardViewCornerRadius"
         app:cardElevation="0dp">
@@ -96,4 +97,13 @@
         </LinearLayout>
 
     </android.support.v7.widget.CardView>
+
+    <!--Shadow CardView-->
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="256dp"
+        android:layout_marginTop="5dp"
+        app:cardCornerRadius="@dimen/cardViewShadowCornerRadius"
+        app:cardElevation="-1dp"
+        app:cardBackgroundColor="@color/colorShadowGray"/>
 </RelativeLayout>
