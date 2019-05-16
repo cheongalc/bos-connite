@@ -1,5 +1,7 @@
 package com.connite;
 
+import android.net.Uri;
+
 import java.net.URI;
 
 public class ActivityItemData {
@@ -8,15 +10,15 @@ public class ActivityItemData {
     private String namedLocation;
     private long latitude;
     private long longitude;
-    private URI imageURI;
+    private Uri imageUri;
 
-    public ActivityItemData(String name, String description, String namedLocation, long latitude, long longitude, URI imageURI) {
+    public ActivityItemData(String name, String description, String namedLocation, long latitude, long longitude, Uri imageUri) {
         this.name = name;
         this.description = description;
         this.namedLocation = namedLocation;
         this.latitude = latitude;
         this.longitude = longitude;
-        this.imageURI = imageURI;
+        this.imageUri = imageUri;
     }
 
     public String getName() {
@@ -39,7 +41,7 @@ public class ActivityItemData {
         return longitude;
     }
 
-    public URI getImageURI() {
-        return imageURI;
+    public Uri getImageUri() {
+        return imageUri;
     }
 }

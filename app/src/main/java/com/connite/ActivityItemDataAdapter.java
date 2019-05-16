@@ -2,10 +2,13 @@ package com.connite;
 
 import android.app.Activity;
 import android.content.Context;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,8 +25,32 @@ public class ActivityItemDataAdapter extends ArrayAdapter<ActivityItemData> {
 
     public View getView(int position, View convertView, ViewGroup parent) {
         ActivityItemData currActivityItem = activityItemData.get(position);
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-
+        ActivityItemViewHolder viewHolder;
+        if (convertView == null) {
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
+            convertView = inflater.inflate(R.layout.fragment_activity_item, null);
+            viewHolder = new ActivityItemViewHolder();
+            viewHolder.name = convertView.findViewById(R.id.tv_ActivityName);
+            viewHolder.description = convertView.findViewById(R.id.tv_ActivityDescription);
+            viewHolder.namedLocation = convertView.findViewById(R.id.tv_ActivityNamedLocation);
+            viewHolder.icon = convertView.findViewById(R.id.iv_ActivityItemImage);
+            convertView.setTag(viewHolder);
+        } else {
+            viewHolder = (ActivityItemViewHolder) convertView.getTag();
+        }
+        viewHolder.name.setText(currActivityItem.getName());
+        viewHolder.description.setText(currActivityItem.getDescription());
+        viewHolder.namedLocation.setText(currActivityItem.getNamedLocation());
+        viewHolder.icon.setImageURI(currActivityItem.getImageUri());
         return convertView;
     }
+
+    static class ActivityItemViewHolder {
+        TextView name;
+        TextView description;
+        TextView namedLocation;
+        ImageView icon;
+    }
 }
+
+
