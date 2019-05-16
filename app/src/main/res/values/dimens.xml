@@ -4,7 +4,7 @@
     <dimen name="elementDefaultMargin">16dp</dimen>
 
     <!--Main Activity Dimensions-->
-    <dimen name="cardViewDefaultMargin">@dimen/elementDefaultMargin</dimen>
+    <dimen name="cardViewDefaultMargin">10dp</dimen>
     <dimen name="cardViewDefaultPadding">12dp</dimen>
     <dimen name="cardViewDoubleMargin">32dp</dimen>
     <dimen name="cardViewCornerRadius">16dp</dimen>
