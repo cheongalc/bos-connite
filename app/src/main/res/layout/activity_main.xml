@@ -69,15 +69,24 @@
         </LinearLayout>
     </android.support.v7.widget.CardView>
 
+    <View
+        android:id="@+id/v_userHeaderScrollHide"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:background="@color/colorTransparent"/>
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@id/v_userHeaderScrollHide">
 
         <com.connite.ExpandableHeightListView
             android:id="@+id/ehlv_ActivityItemList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="150dp"/>
+            android:divider="@null"
+            android:dividerHeight="0dp"
+            android:paddingTop="@dimen/elementDefaultMargin"/>
 
     </ScrollView>
 
