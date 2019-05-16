@@ -56,6 +56,9 @@
                     android:textSize="22.5sp"/>
 
                 <TextView
+                    android:maxLines="6"
+                    android:ellipsize="end"
+                    android:layout_marginLeft="12dp"
                     android:id="@+id/tv_ActivityDescription"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -63,9 +66,10 @@
                     android:textColor="@color/colorLightGray"
                     android:text="Activity Description"
                     android:textStyle="bold"
-                    android:textSize="18sp"/>
+                    android:textSize="15sp"/>
 
                 <LinearLayout
+                    android:layout_marginBottom="5dp"
                     android:id="@+id/ll_ActivityItemLocationContainer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -93,12 +97,22 @@
                 </LinearLayout>
 
                 <Button
+                    style="?android:attr/borderlessButtonStyle"
+                    android:elevation="0dp"
                     android:id="@+id/btn_NavigateActivity"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
                     android:layout_alignParentBottom="true"
-                    android:text="Navigate"/>
+                    android:layout_centerHorizontal="true"
+                    android:autoSizeTextType="uniform"
+                    android:background="@drawable/button_shadow"
+                    android:drawableStart="@drawable/ic_map_marker"
+                    android:drawablePadding="5dp"
+                    android:padding="10dp"
+                    android:text="Navigate"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorWhite"
+                    android:textStyle="bold" />
 
             </RelativeLayout>
 
@@ -109,7 +123,7 @@
     <!--Shadow CardView-->
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/activityItemHeight"
+        android:layout_height="256dp"
         android:layout_marginTop="5dp"
         app:cardCornerRadius="@dimen/cardViewShadowCornerRadius"
         app:cardElevation="-1dp"
