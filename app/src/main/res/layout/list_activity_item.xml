@@ -28,7 +28,8 @@
                 android:layout_width="0dp"
                 android:layout_height="256dp"
                 android:layout_weight="0.5"
-                android:background="@mipmap/avatar"
+                android:background="@mipmap/tenki"
+                android:src="@mipmap/chika"
                 />
 
             <RelativeLayout
