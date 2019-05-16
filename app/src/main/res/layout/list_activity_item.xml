@@ -11,8 +11,9 @@
         android:layout_marginTop="@dimen/elementDefaultMargin"
         android:layout_marginStart="@dimen/cardViewDoubleMargin"
         android:layout_marginEnd="@dimen/cardViewDoubleMargin"
-        app:cardBackgroundColor="@color/colorAccent"
-        app:cardCornerRadius="@dimen/cardViewCornerRadius">
+        app:cardBackgroundColor="@color/colorLightBlue"
+        app:cardCornerRadius="@dimen/cardViewCornerRadius"
+        app:cardElevation="0dp">
 
         <LinearLayout
             android:id="@+id/ll_ActivityItemBodyContainer"
