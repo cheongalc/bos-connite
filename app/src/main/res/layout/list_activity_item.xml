@@ -17,6 +17,8 @@
         app:cardCornerRadius="@dimen/cardViewCornerRadius"
         app:cardElevation="0dp">
 
+
+
         <LinearLayout
             android:id="@+id/ll_ActivityItemBodyContainer"
             android:layout_width="match_parent"
