@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/rl_homeFragmentContainer"
+    android:id="@+id/rl_HomeFragmentContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <ScrollView
+        android:id="@+id/sv_HomeFragmentScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="none">
 
         <com.connite.ExpandableHeightListView
-            android:id="@+id/ehlv_ActivityItemList"
+            android:id="@+id/ehlv_HomeFragmentActivityItemList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:divider="@null"

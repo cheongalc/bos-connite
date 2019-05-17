@@ -30,7 +30,7 @@ public class ActivityItemDataAdapter extends ArrayAdapter<ActivityItemData> {
         ActivityItemViewHolder viewHolder;
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.list_activity_item, null);
+            convertView = inflater.inflate(R.layout.item_activity_item, null);
             viewHolder = new ActivityItemViewHolder();
             viewHolder.name = convertView.findViewById(R.id.tv_ActivityName);
             viewHolder.description = convertView.findViewById(R.id.tv_ActivityDescription);
