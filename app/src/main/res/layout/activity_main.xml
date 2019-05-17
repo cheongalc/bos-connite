@@ -9,6 +9,7 @@
 
     <!--User Header CardView-->
     <RelativeLayout
+        android:id="@+id/rl_userHeaderContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -22,7 +23,7 @@
             android:id="@+id/cv_UserHeaderCard"
             android:layout_width="match_parent"
             android:layout_height="@dimen/userHeaderHeight"
-            android:onClick="startUserInfoActivity"
+            android:onClick="toggleNavbar"
             app:cardCornerRadius="@dimen/cardViewCornerRadius"
             app:cardElevation="0dp">
 
@@ -98,24 +99,156 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/userHeaderHeight"
         android:layout_alignParentTop="true"
-        android:background="@color/colorTransparent" />
+        android:background="@color/colorWhite" />
 
-    <ScrollView
+    <FrameLayout
+        android:id="@+id/fl_fragmentContainer"
+        android:elevation="-2dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/v_userHeaderScrollHide"/>
+
+    <View
+        android:id="@+id/v_translucentHide"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/v_userHeaderScrollHide"
-        android:scrollbars="none">
+        android:elevation="-1dp"
+        android:background="@color/colorTranslucentBackground"
+        android:onClick="toggleNavbar"/>
 
-        <com.connite.ExpandableHeightListView
-            android:id="@+id/ehlv_ActivityItemList"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:divider="@null"
-            android:dividerHeight="0dp"
-            android:paddingTop="@dimen/cardViewLargePadding"
-            android:scrollbars="none" />
+    <RelativeLayout
+        android:id="@+id/rl_userInfoNavbarContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_userHeaderContainer"
+        android:layout_marginStart="@dimen/cardViewDoubleMargin"
+        android:layout_marginTop="@dimen/cardViewDefaultMargin">
 
-    </ScrollView>
+        <android.support.v7.widget.CardView
+            android:layout_width="@dimen/userInfoNavbarWidth"
+            android:layout_height="@dimen/userInfoNavbarHeight"
+            app:cardCornerRadius="@dimen/cardViewCornerRadius"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="@color/colorCyan">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/cardViewDefaultPadding">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginEnd="@dimen/cardViewDefaultPadding"
+                        android:src="@drawable/ic_home_white_24dp"
+                        android:scaleType="fitCenter"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:textColor="@color/colorWhite"
+                        android:textStyle="bold"
+                        android:textSize="25sp"
+                        android:text="Home"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:onClick="showConnectFragment">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginEnd="@dimen/cardViewDefaultPadding"
+                        android:src="@drawable/ic_people_white_24dp"
+                        android:scaleType="fitCenter"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:textColor="@color/colorWhite"
+                        android:textStyle="bold"
+                        android:textSize="25sp"
+                        android:text="Connect"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:onClick="showPastActivitiesFragment">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginEnd="@dimen/cardViewDefaultPadding"
+                        android:src="@drawable/ic_access_time_white_24dp"
+                        android:scaleType="fitCenter"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:textColor="@color/colorWhite"
+                        android:textStyle="bold"
+                        android:textSize="25sp"
+                        android:text="Past"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:onClick="showSettingsFragment">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginEnd="@dimen/cardViewDefaultPadding"
+                        android:src="@drawable/ic_settings_white_24dp"
+                        android:scaleType="fitCenter"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:textColor="@color/colorWhite"
+                        android:textStyle="bold"
+                        android:textSize="25sp"
+                        android:text="Settings"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="@dimen/userInfoNavbarWidth"
+            android:layout_height="@dimen/userInfoNavbarHeight"
+            android:layout_marginTop="5dp"
+            app:cardElevation="-1dp"
+            app:cardBackgroundColor="@color/colorShadowGray"
+            app:cardCornerRadius="@dimen/cardViewShadowCornerRadius"/>
+
+    </RelativeLayout>
 
     <!--Floating Action Button-->
     <ImageButton

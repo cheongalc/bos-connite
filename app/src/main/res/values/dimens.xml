@@ -10,7 +10,7 @@
     <dimen name="cardViewLargePadding">16dp</dimen>
     <dimen name="cardViewDoubleMargin">20dp</dimen>
     <dimen name="cardViewCornerRadius">16dp</dimen>
-    <dimen name="cardViewShadowCornerRadius">14dp</dimen>
+    <dimen name="cardViewShadowCornerRadius">12dp</dimen>
     <dimen name="cardViewElevation">4dp</dimen>
     <dimen name="fabMargin">10dp</dimen>
     <dimen name="userHeaderHeight">88dp</dimen>
@@ -19,6 +19,6 @@
     <dimen name="activityItemHeight">325dp</dimen>
 
     <!--User Info Dimensions-->
-    <dimen name="userInfoNavbarWidth">200dp</dimen>
-    <dimen name="userInfoNavbarHeight">260dp</dimen>
+    <dimen name="userInfoNavbarWidth">190dp</dimen>
+    <dimen name="userInfoNavbarHeight">216dp</dimen>
 </resources>

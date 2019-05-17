@@ -8,7 +8,7 @@
     <color name="colorLinkBlue">#8091BE</color>
     <color name="colorBlack">#000000</color>
     <color name="colorTransparent">@android:color/transparent</color>
-    <color name="colorTranslucentBackground">#3C000000</color>
+    <color name="colorTranslucentBackground">#DCFFFFFF</color>
     <color name="colorLightBlue">#E5F4FB</color>
     <color name="colorShadowGray">#E7E5E6</color>
     <color name="colorLightGray">#9EA8AA</color>
