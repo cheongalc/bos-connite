@@ -15,4 +15,16 @@
         <item name="android:windowContentOverlay">@null</item>
     </style>
 
+    <style name="UserInfoActivityTheme" parent="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@color/colorTransparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <!--<item name="android:windowActivityTransitions">true</item>-->
+        <!--<item name="android:windowEnterTransition">@transition/fade</item>-->
+        <!--<item name="android:windowExitTransition">@transition/fade</item>-->
+    </style>
+
 </resources>

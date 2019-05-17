@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
     public void startUserInfoActivity(View view) {
         Intent intent = new Intent(this, UserInfoActivity.class);
         startActivity(intent);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 
     public void checkFirstTimeRun() {
