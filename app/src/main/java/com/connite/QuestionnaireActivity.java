@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.RadioButton;
 
 public class QuestionnaireActivity extends AppCompatActivity {
 
@@ -15,13 +16,20 @@ public class QuestionnaireActivity extends AppCompatActivity {
     private NonSwipeableViewPager nsvp_QuestionnaireViewPager;
     private static double numPages = 6.0;
 
+    public QuestionnaireDataClass dataClass;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questionnaire);
 
+
         final ProgressBar pb_QuestionnaireProgress = findViewById(R.id.pb_QuestionnaireProgress);
         pb_QuestionnaireProgress.setProgress((int) (1.0/6.0*100));
+
+        dataClass = new QuestionnaireDataClass();
+
+
 
 //        Init Next Button
         final Button btn_NextQuestionnaireFragment = findViewById(R.id.btn_NextQuestionnaireFragment);
@@ -29,6 +37,8 @@ public class QuestionnaireActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 nsvp_QuestionnaireViewPager.setCurrentItem(nsvp_QuestionnaireViewPager.getCurrentItem()+1);
+                RadioButton rad = dataClass.ageGroupFragmentRootView.findViewById(R.id.rb_AgeGroup1);
+                Log.d("ageGroupRelative", rad.isChecked()+"");
             }
         });
 
@@ -53,6 +63,8 @@ public class QuestionnaireActivity extends AppCompatActivity {
                     btn_NextQuestionnaireFragment.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
+                            RadioButton rad = dataClass.ageGroupFragmentRootView.findViewById(R.id.rb_AgeGroup1);
+                            Log.d("ageGroupRelative", rad.isChecked()+"");
                             processQuestionnaireData();
                             finish();
                             Intent intent = new Intent(QuestionnaireActivity.this, MainActivity.class);

@@ -1,5 +1,6 @@
 package com.connite;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -25,6 +26,8 @@ public class QuestionnaireViewPagerAdapter extends FragmentStatePagerAdapter {
         arguments.putInt("fragmentNumber", position);
         return QuestionnaireFragment.newInstance(arguments);
     }
+
+
 
     @Override
     public int getCount() {
