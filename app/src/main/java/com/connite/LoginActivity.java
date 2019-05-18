@@ -1,6 +1,8 @@
 package com.connite;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -128,7 +130,9 @@ public class LoginActivity extends AppCompatActivity {
 //                            Successfully signed in to firebase
                             GlobalVariables.user = firebaseAuth.getCurrentUser();
                             updateUserInfo();
-                            startMainActivity();
+                            if (checkFirstTimeRun()) startQuestionnaireActivity();
+                            else startMainActivity();
+
                             Toast.makeText(LoginActivity.this, "Successfully signed in to Firebase with Google!", Toast.LENGTH_SHORT).show();
                         } else {
 //                            sign in failed for some reason
@@ -138,6 +142,28 @@ public class LoginActivity extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    private void startQuestionnaireActivity() {
+        Intent intent = new Intent(this, QuestionnaireActivity.class);
+        startActivity(intent);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+        finish();
+    }
+
+    private boolean checkFirstTimeRun() {
+        SharedPreferences sharedPreferences = this.getSharedPreferences("ConniteSharedPreferences", Context.MODE_PRIVATE);
+        if (sharedPreferences.contains("isAppFirstTimeRun")) {
+            // isAppFirstTimeRun has been defined before, hence it is NOT the first run
+            return false;
+        } else {
+            // there is no such item in SharedPreferences, therefore it is the first run
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putBoolean("isAppFirstTimeRun", false);
+            editor.apply();
+            return true;
+        }
+
     }
 
     private void updateUserInfo() {
