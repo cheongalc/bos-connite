@@ -1,6 +1,7 @@
 package com.connite;
 
 import android.content.Intent;
+import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -28,6 +29,9 @@ import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class LoginActivity extends AppCompatActivity {
 
     private static String LOG_TAG = "LOGINACTIVITY";
@@ -36,7 +40,6 @@ public class LoginActivity extends AppCompatActivity {
     private GoogleSignInClient googleSignInClient;
     private static int signInRequestCode = 666;
     private DatabaseReference firebaseRoot;
-    private DatabaseReference firebaseUserDirectory;
     private FirebaseDatabase database;
 
     private RelativeLayout rl_LoginProgressOverlay;
@@ -57,11 +60,13 @@ public class LoginActivity extends AppCompatActivity {
 //        init firebase database
         database = FirebaseDatabase.getInstance();
         firebaseRoot = database.getReference();
-        firebaseUserDirectory = firebaseRoot.child("Users");
+
 
         if (firebaseAuth.getCurrentUser() != null) {
 //            this means that the user has already signed in. move to mainactivity
+            Log.d(LOG_TAG, "The user has already signed in.");
             GlobalVariables.user = firebaseAuth.getCurrentUser();
+            updateUserInfo();
             startMainActivity();
         } else {
 //            the user has not signed in yet. show the login progress overlay.
@@ -120,6 +125,7 @@ public class LoginActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
 //                            Successfully signed in to firebase
                             GlobalVariables.user = firebaseAuth.getCurrentUser();
+                            updateUserInfo();
                             startMainActivity();
                             Toast.makeText(LoginActivity.this, "Successfully signed in to Firebase with Google!", Toast.LENGTH_SHORT).show();
                         } else {
@@ -130,5 +136,10 @@ public class LoginActivity extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    private void updateUserInfo() {
+        DatabaseReference firebaseUserReference = firebaseRoot.child(GlobalVariables.user.getUid());
+        firebaseUserReference.child("email").setValue(GlobalVariables.user.getEmail());
     }
 }
