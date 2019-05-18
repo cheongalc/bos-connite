@@ -25,8 +25,8 @@ class FirebaseHandler {
 
     static void updateUserPreferences(double physicalWeight, double financialWeight, double socialWeight) {
         userRef.child("preferences").child("physicalWeight").setValue(physicalWeight);
-        userRef.child(user.getUid()).child("preferences").child("financialWeight").setValue(financialWeight);
-        userRef.child(user.getUid()).child("preferences").child("socialWeight").setValue(socialWeight);
+        userRef.child("preferences").child("financialWeight").setValue(financialWeight);
+        userRef.child("preferences").child("socialWeight").setValue(socialWeight);
     }
 
     static void addCurrentActivity (ActivityItemData currentActivity) {

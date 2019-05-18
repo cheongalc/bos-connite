@@ -1,5 +1,6 @@
 package com.connite;
 
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
@@ -8,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -17,11 +19,11 @@ import com.bumptech.glide.Glide;
 
 public class SuggestionFragment extends Fragment {
 
-    public LinearLayout rootLayout;
+    public RelativeLayout rootLayout;
 
     public static SuggestionFragment newInstance(ActivityItemData activityItemData) {
         Bundle arguments = new Bundle();
-        arguments.putParcelable("activityItemData", (Parcelable) activityItemData);
+        arguments.putParcelable("activityItemData", activityItemData);
         SuggestionFragment fragment = new SuggestionFragment();
         fragment.setArguments(arguments);
         return fragment;
@@ -30,9 +32,9 @@ public class SuggestionFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        ActivityItemData currActivityItem = getArguments().getParcelable("activityItemData");
+        final ActivityItemData currActivityItem = getArguments().getParcelable("activityItemData");
         ViewGroup viewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_suggestion, container, false);
-        rootLayout = (LinearLayout) viewGroup;
+        rootLayout = (RelativeLayout) viewGroup;
 
         ImageView iv_SuggestionImage = viewGroup.findViewById(R.id.iv_SuggestionImage);
         Glide.with(this).load(currActivityItem.getImageUrl()).into(iv_SuggestionImage);
@@ -53,12 +55,31 @@ public class SuggestionFragment extends Fragment {
         };
         for (int i = costLevel; i < 5; i++) {
             ImageView iv_SuggestionPriceLevelI = viewGroup.findViewById(costLevelDollarViews[i]);
-            iv_SuggestionPriceLevelI.setBackgroundColor(getResources().getColor(R.color.colorDarkGray));
+            iv_SuggestionPriceLevelI.setImageTintList(ColorStateList.valueOf(getResources().getColor(R.color.colorLightGray)));
         }
 
         TextView tv_SuggestionNamedLocation = viewGroup.findViewById(R.id.tv_SuggestionNamedLocation);
         tv_SuggestionNamedLocation.setText(currActivityItem.getNamedLocation());
 
+        Button btn_DeclineSuggestion = viewGroup.findViewById(R.id.btn_DeclineSuggestion);
+        btn_DeclineSuggestion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SuggestionFragmentInterface suggestionFragmentInterface = (SuggestionFragmentInterface) getActivity();
+                suggestionFragmentInterface.onSuggestionAction(currActivityItem, false);
+            }
+        });
+
+        Button btn_AcceptSuggestion = viewGroup.findViewById(R.id.btn_AcceptSuggestion);
+        btn_AcceptSuggestion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SuggestionFragmentInterface suggestionFragmentInterface = (SuggestionFragmentInterface) getActivity();
+                suggestionFragmentInterface.onSuggestionAction(currActivityItem, true);
+            }
+        });
+
         return viewGroup;
     }
+
 }

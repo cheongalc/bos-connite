@@ -63,9 +63,9 @@ public class LoginActivity extends AppCompatActivity {
             Log.d(LOG_TAG, "The user has already signed in.");
             GlobalVariables.user = firebaseAuth.getCurrentUser();
             updateUserInfo();
-            startQuestionnaireActivity();
-//            if (checkFirstTimeRun()) startQuestionnaireActivity();
-//            else startMainActivity();
+//            startQuestionnaireActivity();
+            if (checkFirstTimeRun()) startQuestionnaireActivity();
+            else startMainActivity();
         } else {
 //            the user has not signed in yet. show the login progress overlay.
             rl_LoginProgressOverlay = findViewById(R.id.rl_LoginProgressOverlay);

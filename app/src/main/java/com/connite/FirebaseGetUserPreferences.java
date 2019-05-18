@@ -8,18 +8,20 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Dictionary;
+import java.util.List;
 
-public class FirebaseGetActivitiesClass {
+public class FirebaseGetUserPreferences {
     // Listener defined earlier
     public interface MyCustomObjectListener {
-        void onActivitiesLoaded(ArrayList<ActivityItemData> activityList);
+        void onPreferencesRetrieved(Dictionary<String,String> preferences);
     }
 
     // Member variable was defined earlier
-    private MyCustomObjectListener listener;
+    private FirebaseGetUserPreferences.MyCustomObjectListener listener;
 
     // Constructor where listener events are ignored
-    FirebaseGetActivitiesClass() {
+    FirebaseGetUserPreferences() {
         // set null or default listener or accept as argument to constructor
         this.listener = null;
         loadDataAsync();
@@ -29,19 +31,19 @@ public class FirebaseGetActivitiesClass {
 
     private void loadDataAsync() {
 
-        FirebaseHandler.userRef.child("activityQueue").addListenerForSingleValueEvent(new ValueEventListener() {
+        FirebaseHandler.userRef.child("preferences").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                ArrayList<ActivityItemData> activityList = new ArrayList<>();
+                Dictionary<String,String> preferences = null;
 
                 for (DataSnapshot child : dataSnapshot.getChildren()) {
-                    activityList.add(child.getValue(ActivityItemData.class));
+                    preferences.put(child.getKey()+"",child.getValue()+"");
                 }
 
                 if(listener != null) {
-                    Log.d("GET ACTIVITIES CLASS", dataSnapshot+"");
-                    listener.onActivitiesLoaded(activityList);
+                    Log.d("fuck", dataSnapshot+"");
+                    listener.onPreferencesRetrieved(preferences);
                 }
 
             }
@@ -54,7 +56,7 @@ public class FirebaseGetActivitiesClass {
 
     }
 
-    public void setCustomObjectListener(MyCustomObjectListener listener) {
+    public void setCustomObjectListener(FirebaseGetUserPreferences.MyCustomObjectListener listener) {
         this.listener = listener;
     }
 }

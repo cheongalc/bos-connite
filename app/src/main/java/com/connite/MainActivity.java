@@ -189,6 +189,7 @@ public class MainActivity extends AppCompatActivity implements FragmentInterface
     public void startSuggestionsActivity(View view) {
         Intent intent = new Intent(this, SuggestionsActivity.class);
         startActivity(intent);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 
     public void toggleNavbar() {
