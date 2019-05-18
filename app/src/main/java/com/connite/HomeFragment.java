@@ -51,7 +51,8 @@ public class HomeFragment extends Fragment {
                             "Lorong 6 Toa Payoh, Swimming Complex, Singapore 319392",
                             1.330613,
                             103.850156,
-                            "https://lh5.googleusercontent.com/p/AF1QipNG0TFYMjChYBEpanHyTTffOBF-UQkPAvB7E9zi=w203-h114-k-no"));
+                            "https://lh5.googleusercontent.com/p/AF1QipNG0TFYMjChYBEpanHyTTffOBF-UQkPAvB7E9zi=w203-h114-k-no",
+                            "6969696"));
         }
         return arrayList;
     }

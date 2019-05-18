@@ -97,7 +97,7 @@ public class QuestionnaireActivity extends AppCompatActivity {
 
         SeekBar socialSeekBar = dataClass.socialFragmentRootView.findViewById(R.id.sb_SocialScale);
         int socialLevel = socialSeekBar.getProgress();
-        dataClass.socialWeight = socialLevel*0.5 + 0.5;
+        dataClass.socialWeight = (socialLevel/10.0)*0.5 + 0.5;
 
         computeFinancialWeight(financial);
         computeBMI(height, weight);
@@ -106,7 +106,7 @@ public class QuestionnaireActivity extends AppCompatActivity {
 
         dataClass.physicalWeight = dataClass.activenessWeight*dataClass.ageGroupWeight*dataClass.bmiWeight*0.5 +0.5;
 
-
+        FirebaseHandler.updateUserPreferences(dataClass.physicalWeight, dataClass.financialWeight, dataClass.socialWeight);
     }
 
     private void computeBMI(int height, int weight){
@@ -155,19 +155,19 @@ public class QuestionnaireActivity extends AppCompatActivity {
 
         switch (financial) {
             case 0:
-                financialWeight = 1.0;
+                financialWeight = 0.5;
                 break;
             case 1:
-                financialWeight = 0.8;
+                financialWeight = 0.6;
                 break;
             case 2:
                 financialWeight = 0.7;
                 break;
             case 3:
-                financialWeight = 0.6;
+                financialWeight = 0.8;
                 break;
             case 4:
-                financialWeight = 0.5;
+                financialWeight = 1.0;
                 break;
         }
         dataClass.financialWeight = financialWeight;
