@@ -21,8 +21,9 @@
 
             <ImageView
                 android:id="@+id/iv_AgeGroupIcon"
-                android:layout_width="250dp"
-                android:layout_height="250dp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.29"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"
                 android:src="@drawable/ic_park" />
@@ -30,25 +31,32 @@
             <TextView
                 android:id="@+id/iv_AgeGroupQuestion"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="0.2"
                 android:layout_margin="10dp"
                 android:text="What is your age group?"
                 android:textAlignment="center"
                 android:textColor="@color/colorWhite"
                 android:textSize="35sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:autoSizeMaxTextSize="35sp"
+                android:autoSizeMinTextSize="20sp"
+                android:autoSizeTextType="uniform"
+                android:gravity="center"/>
 
             <View
                 android:id="@+id/v_AgeGroupDivider"
                 android:layout_width="match_parent"
-                android:layout_height="5dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.01"
                 android:layout_margin="10dp"
                 android:background="@color/colorWhite" />
 
             <LinearLayout
                 android:id="@+id/ll_AgeGroupOptionsContainer"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"
                 android:orientation="horizontal">
@@ -64,7 +72,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
                         android:buttonTint="@color/colorGreenishBlue"
-                        android:padding="5dp"
                         android:text="12 - 17"
                         android:textColor="@color/colorWhite"
                         android:textSize="20sp"
@@ -76,7 +83,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
                         android:buttonTint="@color/colorGreenishBlue"
-                        android:padding="5dp"
                         android:text="18 - 24"
                         android:textColor="@color/colorWhite"
                         android:textSize="20sp"
@@ -88,7 +94,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
                         android:buttonTint="@color/colorGreenishBlue"
-                        android:padding="5dp"
                         android:text="24 - 44"
                         android:textColor="@color/colorWhite"
                         android:textSize="20sp"
@@ -100,7 +105,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
                         android:buttonTint="@color/colorGreenishBlue"
-                        android:padding="5dp"
                         android:text="44 - 64"
                         android:textColor="@color/colorWhite"
                         android:textSize="20sp"
@@ -111,7 +115,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:buttonTint="@color/colorGreenishBlue"
-                        android:padding="5dp"
                         android:text="above 64"
                         android:textColor="@color/colorWhite"
                         android:textSize="20sp"
