@@ -10,6 +10,7 @@ public class ActivityItemData {
     private double latitude;
     private double longitude;
     private String imageUrl;
+    private int costLevel;
 
     public ActivityItemData() {
 
@@ -23,6 +24,17 @@ public class ActivityItemData {
         this.longitude = longitude;
         this.imageUrl = imageUrl;
         this.placeId = placeId;
+    }
+
+    public ActivityItemData(String name, String description, String namedLocation, double latitude, double longitude, String imageUrl, String placeId, int costLevel) {
+        this.name = name;
+        this.description = description;
+        this.namedLocation = namedLocation;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.imageUrl = imageUrl;
+        this.placeId = placeId;
+        this.costLevel = costLevel;
     }
 
     public String getPlaceId() {return placeId;}
@@ -49,5 +61,9 @@ public class ActivityItemData {
 
     public String getImageUrl() {
         return imageUrl;
+    }
+
+    public int getCostLevel() {
+        return costLevel;
     }
 }
