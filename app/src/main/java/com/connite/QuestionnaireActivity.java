@@ -7,8 +7,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
+import android.widget.SeekBar;
 
 public class QuestionnaireActivity extends AppCompatActivity {
 
@@ -84,10 +86,47 @@ public class QuestionnaireActivity extends AppCompatActivity {
     }
 
     private void processQuestionnaireData() {
+        int ageGroup = dataClass.ageGroup;
+        int activeness = dataClass.activeness;
+        int financial = dataClass.finance;
+
+        EditText etHeight = dataClass.bmiFragmentRootView.findViewById(R.id.et_BMIHeightInput);
+        EditText etWeight = dataClass.bmiFragmentRootView.findViewById(R.id.et_BMIWeightInput);
+        int height = Integer.parseInt(etHeight.getText().toString());
+        int weight = Integer.parseInt(etWeight.getText().toString());
+
+        SeekBar socialSeekBar = dataClass.socialFragmentRootView.findViewById(R.id.sb_SocialScale);
+        int socialLevel = socialSeekBar.getProgress();
+        dataClass.socialWeight = socialLevel*0.5 + 0.5;
+
+        computeFinancialWeight(financial);
+        computeBMI(height, weight);
+        computeAgeGroupWeight(ageGroup);
+        computeActivenessWeight(activeness);
+
+        dataClass.physicalWeight = dataClass.activenessWeight*dataClass.ageGroupWeight*dataClass.bmiWeight*0.5 +0.5;
+
         
     }
 
-    private double computeAgeGroupWeight (Integer ageGroup) {
+    private void computeBMI(int height, int weight){
+        double heightInM = height/100.0;
+        double bmi = weight/(heightInM*heightInM);
+
+        double bmiWeight;
+
+        if(bmi <= 18.5) {
+            bmiWeight = 0.9;
+        } else if(bmi <= 25) {
+            bmiWeight = 0.8;
+        } else {
+            bmiWeight = 1.0;
+        }
+
+        dataClass.bmiWeight = bmiWeight;
+    }
+
+    private void computeAgeGroupWeight (int ageGroup) {
         double ageGroupWeight = 0.0;
 
         switch (ageGroup) {
@@ -108,6 +147,52 @@ public class QuestionnaireActivity extends AppCompatActivity {
                 break;
         }
 
-        return ageGroupWeight;
+        dataClass.ageGroupWeight = ageGroupWeight;
+    }
+
+    private void computeFinancialWeight (int financial) {
+        double financialWeight = 0.0;
+
+        switch (financial) {
+            case 0:
+                financialWeight = 1.0;
+                break;
+            case 1:
+                financialWeight = 0.8;
+                break;
+            case 2:
+                financialWeight = 0.7;
+                break;
+            case 3:
+                financialWeight = 0.6;
+                break;
+            case 4:
+                financialWeight = 0.5;
+                break;
+        }
+        dataClass.financialWeight = financialWeight;
+    }
+
+    private void computeActivenessWeight (int activeness) {
+        double activenessWeight = 0.0;
+
+        switch (activeness) {
+            case 0:
+                activenessWeight = 1.0;
+                break;
+            case 1:
+                activenessWeight = 0.8;
+                break;
+            case 2:
+                activenessWeight = 0.7;
+                break;
+            case 3:
+                activenessWeight = 0.6;
+                break;
+            case 4:
+                activenessWeight = 0.5;
+                break;
+        }
+        dataClass.activenessWeight = activenessWeight;
     }
 }

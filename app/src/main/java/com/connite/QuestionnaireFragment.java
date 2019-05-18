@@ -53,6 +53,13 @@ public class QuestionnaireFragment extends Fragment {
                 break;
             case 2:
                 viewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_questionaire_activeness, container, false);
+                RadioGroup radioGroupAct = viewGroup.findViewById(R.id.rg_ActivenessOptionsGroup);
+                radioGroupAct.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(RadioGroup group, int checkedId) {
+                        activity.dataClass.activeness = checkedId - R.id.rb_ActivenessOption1;
+                    }
+                });
                 activity.dataClass.activenessFragmentRootView = (RelativeLayout) viewGroup;
                 break;
             case 3:
@@ -65,6 +72,13 @@ public class QuestionnaireFragment extends Fragment {
                 break;
             case 5:
                 viewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_questionaire_financial, container, false);
+                RadioGroup radioGroupFin = viewGroup.findViewById(R.id.rg_FinancialOptionsGroup);
+                radioGroupFin.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(RadioGroup group, int checkedId) {
+                        activity.dataClass.finance = checkedId - R.id.rb_FinancialOption1;
+                    }
+                });
                 activity.dataClass.financialFragmentRootView = (RelativeLayout) viewGroup;
                 break;
         }
