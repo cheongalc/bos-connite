@@ -106,7 +106,7 @@ public class QuestionnaireActivity extends AppCompatActivity {
 
         dataClass.physicalWeight = dataClass.activenessWeight*dataClass.ageGroupWeight*dataClass.bmiWeight*0.5 +0.5;
 
-        
+
     }
 
     private void computeBMI(int height, int weight){
