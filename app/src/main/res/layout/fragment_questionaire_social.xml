@@ -49,23 +49,24 @@
                 android:orientation="vertical">
 
                 <SeekBar
-                    android:thumb="@drawable/thumb"
-                    android:thumbTint="@color/colorCyan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:progress="50"
                     android:progressDrawable="@drawable/seek_bar"
                     android:splitTrack="false"
-                    android:progress="50"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:thumb="@drawable/thumb"
+                    android:thumbTint="@color/colorCyan" />
 
                 <TextView
-                    android:textColor="@color/colorGreenish"
-                    android:textStyle="bold"
-                    android:textSize="50sp"
-                    android:layout_gravity="center"
-                    android:text="5"
-                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"/>
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:baselineAligned="false"
+                    android:text="5"
+                    android:textColor="@color/colorGreenish"
+                    android:textSize="50sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
