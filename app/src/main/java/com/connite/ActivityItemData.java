@@ -6,11 +6,11 @@ public class ActivityItemData {
     private String name;
     private String description;
     private String namedLocation;
-    private long latitude;
-    private long longitude;
+    private double latitude;
+    private double longitude;
     private String imageUrl;
 
-    public ActivityItemData(String name, String description, String namedLocation, long latitude, long longitude, String imageUrl) {
+    public ActivityItemData(String name, String description, String namedLocation, double latitude, double longitude, String imageUrl) {
         this.name = name;
         this.description = description;
         this.namedLocation = namedLocation;
@@ -31,11 +31,11 @@ public class ActivityItemData {
         return namedLocation;
     }
 
-    public long getLatitude() {
+    public double getLatitude() {
         return latitude;
     }
 
-    public long getLongitude() {
+    public double getLongitude() {
         return longitude;
     }
 
