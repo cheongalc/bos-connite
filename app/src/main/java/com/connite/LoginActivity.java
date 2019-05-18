@@ -37,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
     private static String LOG_TAG = "LOGINACTIVITY";
 
     private FirebaseAuth firebaseAuth;
-    private GoogleSignInClient googleSignInClient;
+    public static GoogleSignInClient googleSignInClient;
     private static int signInRequestCode = 666;
     private DatabaseReference firebaseRoot;
     private FirebaseDatabase database;
@@ -85,10 +85,10 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void startMainActivity() {
+        finish();
         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         startActivity(intent);
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-        finish();
     }
 
     @Override
