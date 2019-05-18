@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -13,6 +14,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MainActivity extends AppCompatActivity implements FragmentInterface {
 
@@ -40,6 +45,12 @@ public class MainActivity extends AppCompatActivity implements FragmentInterface
         setContentView(R.layout.activity_main);
 
 //        Initialize navbar
+        CircleImageView civ_UserProfileImage = findViewById(R.id.civ_UserProfileImage);
+        Glide.with(this).load(GlobalVariables.user.getPhotoUrl()).into(civ_UserProfileImage);
+        TextView tv_UserName = findViewById(R.id.tv_UserName);
+        tv_UserName.setText(GlobalVariables.user.getDisplayName());
+        TextView tv_UserSub = findViewById(R.id.tv_UserSub);
+        tv_UserSub.setText(GlobalVariables.user.getEmail());
         mediumAnimationDuration = getResources().getInteger(android.R.integer.config_mediumAnimTime);
         v_translucentHide = findViewById(R.id.v_TranslucentEffectMask);
         v_translucentHide.setVisibility(View.GONE);
