@@ -41,12 +41,9 @@ public class QuestionnaireFragment extends Fragment {
                 viewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_questionaire_social, container, false);
                 break;
             case 4:
-                viewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_questionaire_food, container, false);
-                break;
-            case 5:
                 viewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_questionaire_sports, container, false);
                 break;
-            case 6:
+            case 5:
                 viewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_questionaire_financial, container, false);
                 break;
         }

@@ -8,7 +8,7 @@ import android.util.Log;
 
 public class QuestionnaireViewPagerAdapter extends FragmentStatePagerAdapter {
 
-    private int numberOfPages = 7;
+    private int numberOfPages = 6;
     private int currentPage;
 
     private static final String LOG_TAG = "QUESTIONNAIREADAPTER";

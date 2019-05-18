@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/rl_AgeGroupFragmentContainer"
+    android:id="@+id/rl_ActivenessFragmentContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <android.support.v7.widget.CardView
-        android:id="@+id/cv_AgeGroupFragmentCard"
+        android:id="@+id/cv_ActivenessFragmentCard"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="10dp"
@@ -14,105 +14,108 @@
         app:cardCornerRadius="@dimen/cardViewCornerRadius">
 
         <LinearLayout
-            android:id="@+id/ll_AgeGroupFragmentInnerContainer"
+            android:id="@+id/ll_ActivenessFragmentInnerContainer"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
             <ImageView
                 android:tint="@color/colorGreenish"
-                android:id="@+id/iv_AgeGroupIcon"
-                android:layout_width="250dp"
-                android:layout_height="250dp"
+                android:id="@+id/iv_ActivenessIcon"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.29"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"
                 android:src="@drawable/work_out" />
 
             <TextView
-                android:id="@+id/iv_AgeGroupQuestion"
+                android:id="@+id/tv_ActivenessQuestion"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="0.2"
                 android:layout_margin="10dp"
                 android:text="How frequently do you work out?"
                 android:textAlignment="center"
                 android:textColor="@color/colorWhite"
                 android:textSize="35sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:gravity="center"
+                android:autoSizeMaxTextSize="35sp"
+                android:autoSizeMinTextSize="20sp"
+                android:autoSizeTextType="uniform"/>
 
             <View
-                android:id="@+id/v_AgeGroupDivider"
+                android:id="@+id/v_ActivenessDivider"
                 android:layout_width="match_parent"
-                android:layout_height="5dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.01"
                 android:layout_margin="10dp"
                 android:background="@color/colorWhite" />
 
             <LinearLayout
-                android:id="@+id/ll_AgeGroupOptionsContainer"
+                android:id="@+id/ll_ActivenessOptionsContainer"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"
                 android:orientation="horizontal">
 
                 <RadioGroup
-                    android:id="@+id/rg_AgeGroupOptionsGroup"
+                    android:id="@+id/rg_ActivenessOptionsGroup"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
                     <RadioButton
-                        android:id="@+id/rb_AgeGroup1"
+                        android:id="@+id/rb_ActivenessOption1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
                         android:buttonTint="@color/colorGreenish"
-                        android:padding="5dp"
                         android:text="Daily"
                         android:textColor="@color/colorWhite"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
                     <RadioButton
-                        android:id="@+id/rb_AgeGroup2"
+                        android:id="@+id/rb_ActivenessOption2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
                         android:buttonTint="@color/colorGreenish"
-                        android:padding="5dp"
                         android:text="Weekly"
                         android:textColor="@color/colorWhite"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
                     <RadioButton
-                        android:id="@+id/rb_AgeGroup3"
+                        android:id="@+id/rb_ActivenessOption3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
                         android:buttonTint="@color/colorGreenish"
-                        android:padding="5dp"
                         android:text="Fortnightly"
                         android:textColor="@color/colorWhite"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
                     <RadioButton
-                        android:id="@+id/rb_AgeGroup4"
+                        android:id="@+id/rb_ActivenessOption4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
                         android:buttonTint="@color/colorGreenish"
-                        android:padding="5dp"
                         android:text="Monthly"
                         android:textColor="@color/colorWhite"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
                     <RadioButton
-                        android:id="@+id/rb_AgeGroup5"
+                        android:id="@+id/rb_ActivenessOption5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:buttonTint="@color/colorGreenish"
-                        android:padding="5dp"
                         android:text="Never"
                         android:textColor="@color/colorWhite"
                         android:textSize="20sp"
