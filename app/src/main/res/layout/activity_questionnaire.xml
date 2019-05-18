@@ -6,13 +6,14 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:id="@+id/questionnaire_top_container"
+        android:id="@+id/ll_QuestionnaireHeaderContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="@dimen/cardViewDefaultPadding">
 
         <ImageView
+            android:id="@+id/iv_QuestionnaireHelpIcon"
             android:layout_weight="0.2"
             android:layout_width="0dp"
             android:layout_height="80dp"
@@ -20,6 +21,7 @@
             android:tint="@color/colorGreenishBlue" />
 
         <LinearLayout
+            android:id="@+id/ll_QuestionnaireProgressContainer"
             android:layout_gravity="center_vertical"
             android:layout_weight="0.8"
             android:layout_width="0dp"
@@ -27,6 +29,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/tv_QuestionnaireHeaderText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingStart="10dp"
@@ -38,7 +41,7 @@
                 android:textStyle="bold" />
 
             <ProgressBar
-                android:id="@+id/pb_questionnaire_progress"
+                android:id="@+id/pb_QuestionnaireProgress"
                 android:layout_marginEnd="20dp"
                 android:layout_marginStart="20dp"
                 android:progress="60"
@@ -50,20 +53,22 @@
 
     </LinearLayout>
 
-    <android.support.v4.view.ViewPager
-        android:layout_below="@+id/questionnaire_top_container"
+    <com.connite.NonSwipeableViewPager
+        android:id="@+id/nsvp_QuestionnaireViewPager"
+        android:layout_below="@+id/ll_QuestionnaireHeaderContainer"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:layout_above="@+id/bottom_control"
+        android:layout_above="@+id/rl_bottomSpacer"
         />
 
     <RelativeLayout
         android:layout_height="wrap_content"
-        android:id="@+id/bottom_control"
+        android:id="@+id/rl_bottomSpacer"
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent">
 
         <Button
+            android:id="@+id/btn_NextQuestionnaireFragment"
             android:drawablePadding="10dp"
             android:textSize="25sp"
             android:drawableTint="@color/colorGreenishBlue"
@@ -75,8 +80,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_gravity=""
-            />
+            android:layout_gravity="center" />
 
     </RelativeLayout>
 
