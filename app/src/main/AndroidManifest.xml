@@ -23,7 +23,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".SuggestionsActivity" />
-        <activity android:name=".QuestionnaireActivity" />
+        <activity android:name=".QuestionnaireActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>
         <activity
             android:name=".MainActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"></activity>
