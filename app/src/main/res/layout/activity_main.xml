@@ -63,7 +63,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="bottom"
-                            android:text="Justin Loh"
+                            android:text="千花藤原"
                             android:textColor="@color/colorWhite"
                             android:textSize="@dimen/userInfoNavbarTextSize"
                             android:textStyle="bold" />
@@ -75,7 +75,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="top"
-                            android:text="Lorem ipsum dolor sit amet."
+                            android:text="Professional Rapper "
                             android:textColor="@color/colorWhite"
                             android:textSize="18sp" />
                     </LinearLayout>

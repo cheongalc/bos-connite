@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity implements FragmentInterface
 
         navBarCurrentActiveText = text;
         navBarCurrentActiveIcon = icon;
-        
+
     }
 
     public void startSuggestionsActivity(View view) {
