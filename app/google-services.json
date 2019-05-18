@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "604711135669",
+    "firebase_url": "https://connite-305f5.firebaseio.com",
+    "project_id": "connite-305f5",
+    "storage_bucket": "connite-305f5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:604711135669:android:44bf223d3ea4e80e",
+        "android_client_info": {
+          "package_name": "com.connite"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "604711135669-vg6hnf0v9r1dpd0s38tbv7hnbcomnbei.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.connite",
+            "certificate_hash": "0c29ecac1b2e2a39c34cd1e05650f99db7eaca95"
+          }
+        },
+        {
+          "client_id": "604711135669-1fv9g9n45gl2273jko7tssu9jk06ue1i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdz6PQTwwBRXhdEaKF4qTKZ0ApAEgL-MU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "604711135669-1fv9g9n45gl2273jko7tssu9jk06ue1i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_LoginActivityContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/blue_grad">
+
+    <!--Google Sign In Button-->
+    <Button
+        android:id="@+id/btn_GoogleSignInButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SIGN IN WITH GOOGLE"
+        android:layout_centerInParent="true"/>
+
+    <!--Progress Overlay to fade the background during sign in-->
+    <RelativeLayout
+        android:id="@+id/rl_LoginProgressOverlay"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="10dp">
+
+        <View
+            android:id="@+id/v_LoginProgressOverlayDimMask"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorTranslucentBackground"/>
+
+        <ProgressBar
+            android:id="@+id/pb_LoginProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

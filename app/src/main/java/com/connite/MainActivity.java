@@ -3,21 +3,16 @@ package com.connite;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.content.Intent;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements FragmentInterface {
 
@@ -28,6 +23,8 @@ public class MainActivity extends AppCompatActivity implements FragmentInterface
     private View v_translucentHide;
     private RelativeLayout rl_userInfoNavbarContainer;
     private static int mediumAnimationDuration;
+    private ImageView navBarCurrentActiveIcon;
+    private TextView navBarCurrentActiveText;
 
     //    Variables for fragment management
     private FragmentManager fragmentManager;
@@ -36,9 +33,6 @@ public class MainActivity extends AppCompatActivity implements FragmentInterface
             pastActivitiesFragmentRootLayout,
             settingsFragmentRootLayout;
     private String currentFragment = "";
-
-    private ImageView navBarCurrentActiveIcon;
-    private TextView navBarCurrentActiveText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
