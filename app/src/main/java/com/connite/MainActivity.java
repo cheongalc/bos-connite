@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -21,6 +22,10 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -43,6 +48,9 @@ public class MainActivity extends AppCompatActivity implements FragmentInterface
             pastActivitiesFragmentRootLayout,
             settingsFragmentRootLayout;
     private String currentFragment = "";
+
+    //    Variables for firebase
+    private GoogleSignInClient googleSignInClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,6 +116,13 @@ public class MainActivity extends AppCompatActivity implements FragmentInterface
         showFragment("Home", ll_NavbarHomeContainer);
 
 //        Initialize suggestions activity
+
+//        Initialize firebase variables
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build();
+        googleSignInClient = GoogleSignIn.getClient(this, gso);
     }
 
     public void showFragment(String fragmentName, RelativeLayout container) {
@@ -201,13 +216,17 @@ public class MainActivity extends AppCompatActivity implements FragmentInterface
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Log.d(LOG_TAG, "Clicked Sign Out button");
-                        finish();
-                        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                        startActivity(intent);
-                        Log.d(LOG_TAG, "Google sign in client accessed from MainActivity: " + LoginActivity.googleSignInClient);
-                        LoginActivity.googleSignInClient.signOut();
-                        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                        googleSignInClient.revokeAccess().addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                Log.d(LOG_TAG, "LOGOUT FINISHED");
+                                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                                intent.putExtra("isFirstStart", false);
+                                startActivity(intent);
+                                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                                finish();
+                            }
+                        });
                     }
                 }).show();
     }

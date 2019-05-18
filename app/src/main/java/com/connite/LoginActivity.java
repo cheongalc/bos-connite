@@ -37,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
     private static String LOG_TAG = "LOGINACTIVITY";
 
     private FirebaseAuth firebaseAuth;
-    public static GoogleSignInClient googleSignInClient;
+    private GoogleSignInClient googleSignInClient;
     private static int signInRequestCode = 666;
     private DatabaseReference firebaseRoot;
     private FirebaseDatabase database;
@@ -61,8 +61,10 @@ public class LoginActivity extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         firebaseRoot = database.getReference();
 
+        Intent intent = getIntent();
+        boolean isFirstStart = intent.getBooleanExtra("isFirstStart", true);
 
-        if (firebaseAuth.getCurrentUser() != null) {
+        if (isFirstStart && firebaseAuth.getCurrentUser() != null) {
 //            this means that the user has already signed in. move to mainactivity
             Log.d(LOG_TAG, "The user has already signed in.");
             GlobalVariables.user = firebaseAuth.getCurrentUser();
