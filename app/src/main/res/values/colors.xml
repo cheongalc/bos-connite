@@ -4,13 +4,14 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#FFBDB2</color>
     <color name="colorWhite">#ffffff</color>
-    <color name="colorNavyBlue">#272830</color>
+    <color name="colorNavyBlue">#0069A6</color>
     <color name="colorGreenishBlue">#00ABC3</color>
     <color name="colorParkGreen">#9ECC4B</color>
     <color name="colorLavendar">#9482AC</color>
     <color name="colorGreenish">#D2FFB7</color>
     <color name="progressBarPink">#FFBDB2</color>
     <color name="colorVibrantRed">#CE7080</color>
+    <color name="colorVibrantYellow">#FFC830</color>
     <color name="colorLinkBlue">#8091BE</color>
     <color name="colorBlack">#000000</color>
     <color name="colorTransparent">@android:color/transparent</color>
