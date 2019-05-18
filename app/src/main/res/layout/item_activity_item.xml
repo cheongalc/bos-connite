@@ -14,7 +14,7 @@
         android:id="@+id/cv_ActivityItemCard"
         android:layout_width="match_parent"
         android:layout_height="@dimen/activityItemHeight"
-        app:cardBackgroundColor="@color/colorLightBlue"
+        app:cardBackgroundColor="@color/colorSkyBlue"
         app:cardCornerRadius="@dimen/cardViewCornerRadius">
 
         <LinearLayout
