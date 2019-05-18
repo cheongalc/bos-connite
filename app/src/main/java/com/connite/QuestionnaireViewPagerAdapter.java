@@ -9,6 +9,7 @@ import android.util.Log;
 public class QuestionnaireViewPagerAdapter extends FragmentStatePagerAdapter {
 
     private int numberOfPages = 7;
+    private int currentPage;
 
     private static final String LOG_TAG = "QUESTIONNAIREADAPTER";
 
@@ -18,16 +19,16 @@ public class QuestionnaireViewPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
+        currentPage = position;
         Log.d(LOG_TAG, "Current viewPager position is " + position);
         Bundle arguments = new Bundle();
         arguments.putInt("fragmentNumber", position);
-        QuestionnaireFragment fragment = new QuestionnaireFragment();
-        fragment.setArguments(arguments);
-        return fragment;
+        return QuestionnaireFragment.newInstance(arguments);
     }
 
     @Override
     public int getCount() {
         return numberOfPages;
     }
+
 }

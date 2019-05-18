@@ -1,5 +1,6 @@
 package com.connite;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -11,21 +12,20 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
 public class QuestionnaireFragment extends Fragment {
-   public RelativeLayout rootLayout;
-   private int fragmentNumber;
+    public RelativeLayout rootLayout;
 
-   private static final String LOG_TAG = "QUESTIONNAIREFRAAGMENT";
+    private static final String LOG_TAG = "QUESTIONNAIREFRAAGMENT";
 
-    public QuestionnaireFragment() {
-        Bundle arguments = getArguments();
-        if (arguments != null) {
-            fragmentNumber = arguments.getInt("fragmentNumber");
-            Log.d(LOG_TAG, "Current fragment number is " + fragmentNumber);
-        }
+    public static QuestionnaireFragment newInstance(Bundle arguments) {
+        QuestionnaireFragment fragment = new QuestionnaireFragment();
+        fragment.setArguments(arguments);
+        return fragment;
     }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        int fragmentNumber = getArguments().getInt("fragmentNumber");
         ViewGroup viewGroup = null;
         switch (fragmentNumber) {
             case 0:
