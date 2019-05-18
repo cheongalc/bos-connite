@@ -10,32 +10,31 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:orientation="vertical"
-        android:padding="50dp">
+        android:orientation="vertical">
 
         <ImageView
-            android:layout_width="250dp"
-            android:layout_height="250dp"
+            android:layout_marginBottom="20dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="50dp"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:src="@mipmap/connite_icon_experimental" />
 
 
-        <Button
-            android:id="@+id/btn_GoogleSignInButton"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:drawableStart="@drawable/google_logo"
-            android:drawablePadding="20dp"
-            android:drawableTint="@color/colorWhite"
-            android:elevation="0dp"
-            android:padding="20dp"
-            android:text="Login"
-            android:textAllCaps="false"
-            android:textColor="@color/colorWhite"
-            android:textSize="35sp" />
+            <Button
+                android:drawableTint="@color/colorWhite"
+                android:drawableStart="@drawable/google_logo"
+                android:padding="20dp"
+                style="?android:attr/borderlessButtonStyle"
+                android:textColor="@color/colorWhite"
+                android:elevation="0dp"
+                android:background="@drawable/list_activity_item_button_rounded"
+                android:layout_gravity="center_horizontal"
+                android:textAllCaps="false"
+                android:textSize="30sp"
+                android:id="@+id/btn_GoogleSignInButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Login" />
 
 
     </LinearLayout>
