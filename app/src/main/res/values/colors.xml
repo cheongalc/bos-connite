@@ -7,13 +7,14 @@
     <color name="colorNavyBlue">#272830</color>
     <color name="colorGreenishBlue">#00ABC3</color>
     <color name="colorParkGreen">#9ECC4B</color>
+    <color name="colorLavendar">#9482AC</color>
     <color name="colorGreenish">#D2FFB7</color>
     <color name="progressBarPink">#FFBDB2</color>
     <color name="colorLinkBlue">#8091BE</color>
     <color name="colorBlack">#000000</color>
     <color name="colorTransparent">@android:color/transparent</color>
     <color name="colorTranslucentBackground">#DCFFFFFF</color>
-    <color name="colorLightBlue">#E5F4FB</color>
+    <color name="colorLightBlue">#43BFD7</color>
     <color name="colorShadowGray">#E7E5E6</color>
     <color name="colorLightGray">#9EA8AA</color>
     <color name="colorCyan">#96D8D7</color>
