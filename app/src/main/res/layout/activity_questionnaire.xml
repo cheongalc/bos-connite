@@ -9,8 +9,7 @@
         android:id="@+id/questionnaire_top_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="10dp">
+        android:orientation="horizontal">
 
         <ImageView
             android:layout_weight="0.5"
@@ -76,7 +75,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_gravity=""
-            android:src="" />
+            />
 
     </RelativeLayout>
 
