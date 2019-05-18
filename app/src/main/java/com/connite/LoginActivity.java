@@ -3,15 +3,13 @@ package com.connite;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.provider.Settings;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -26,13 +24,9 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -41,8 +35,6 @@ public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private GoogleSignInClient googleSignInClient;
     private static int signInRequestCode = 666;
-    private DatabaseReference firebaseRoot;
-    private FirebaseDatabase database;
 
     private RelativeLayout rl_LoginProgressOverlay;
 
@@ -60,8 +52,8 @@ public class LoginActivity extends AppCompatActivity {
         googleSignInClient = GoogleSignIn.getClient(this, gso);
         firebaseAuth = FirebaseAuth.getInstance();
 //        init firebase database
-        database = FirebaseDatabase.getInstance();
-        firebaseRoot = database.getReference();
+        GlobalVariables.database = FirebaseDatabase.getInstance();
+        GlobalVariables.root = GlobalVariables.database.getReference();
 
         Intent intent = getIntent();
         boolean isFirstStart = intent.getBooleanExtra("isFirstStart", true);
@@ -170,7 +162,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void updateUserInfo() {
-        DatabaseReference firebaseUserReference = firebaseRoot.child(GlobalVariables.user.getUid());
+        DatabaseReference firebaseUserReference = GlobalVariables.root.child(GlobalVariables.user.getUid());
         firebaseUserReference.child("email").setValue(GlobalVariables.user.getEmail());
     }
 }
