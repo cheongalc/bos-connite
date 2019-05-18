@@ -23,7 +23,7 @@
             android:id="@+id/cv_UserHeaderCard"
             android:layout_width="match_parent"
             android:layout_height="@dimen/userHeaderHeight"
-            app:cardCornerRadius="@dimen/cardViewCornerRadius"
+            app:cardCornerRadius="@dimen/navBarCornerRadius"
             app:cardElevation="0dp">
 
             <LinearLayout
@@ -91,7 +91,7 @@
             android:layout_height="@dimen/userHeaderHeight"
             android:layout_marginTop="5dp"
             app:cardBackgroundColor="@color/colorShadowGray"
-            app:cardCornerRadius="@dimen/cardViewShadowCornerRadius"
+            app:cardCornerRadius="@dimen/navBarShadowCronerRadius"
             app:cardElevation="-1dp" />
 
     </RelativeLayout>
@@ -137,7 +137,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardBackgroundColor="@color/colorCyan"
-                app:cardCornerRadius="@dimen/cardViewCornerRadius"
+                app:cardCornerRadius="@dimen/navBarCornerRadius"
                 app:cardElevation="0dp">
 
                 <LinearLayout
@@ -277,7 +277,7 @@
                 android:layout_height="55dp"
                 android:layout_alignTop="@id/cv_NavbarShadowGuide"
                 app:cardBackgroundColor="@color/colorShadowGray"
-                app:cardCornerRadius="@dimen/cardViewShadowCornerRadius"
+                app:cardCornerRadius="@dimen/navBarShadowCronerRadius"
                 app:cardElevation="-1dp" />
 
             <View
