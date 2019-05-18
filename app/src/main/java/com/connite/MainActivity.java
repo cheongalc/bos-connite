@@ -3,15 +3,21 @@ package com.connite;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements FragmentInterface {
 
@@ -66,23 +72,52 @@ public class MainActivity extends AppCompatActivity implements FragmentInterface
         currentFragment = fragmentName;
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         Fragment fragment = null;
+
         switch (fragmentName) {
             case "Home":
                 fragment = new HomeFragment();
+                setActiveNavbarTab(0);
                 break;
             case "Connect":
                 fragment = new ConnectFragment();
+                setActiveNavbarTab(1);
                 break;
             case "PastActivities":
                 fragment = new PastActivitiesFragment();
+                setActiveNavbarTab(2);
                 break;
             case "Settings":
                 fragment = new SettingsFragment();
+                setActiveNavbarTab(3);
                 break;
         }
         transaction.replace(R.id.fl_MainActivityFragmentContainer, fragment);
         transaction.commit();
         if (navbarIsOpen) toggleNavbar();
+    }
+
+    private void setActiveNavbarTab(int tabID) {
+        int activeTabColor = getResources().getColor(R.color.colorNavyBlue);
+        int colorWhite = getResources().getColor(R.color.colorWhite);
+        int[] navbarHomeTextIDs = {R.id.tv_NavbarHomeText,
+                R.id.tv_NavbarConnectText,
+                R.id.tv_NavbarPastActivitiesText,
+                R.id.tv_NavbarSettingsText};
+        int[] navbarIconIDs = {R.id.iv_NavbarHomeIcon,
+                R.id.iv_NavbarConnectIcon,
+                R.id.iv_NavbarPastActivitiesIcon,
+                R.id.iv_NavbarSettingsIcon};
+        for (int i = 0; i < 4; i++) {
+            TextView currTextView = findViewById(navbarHomeTextIDs[i]);
+            ImageView currImageView = findViewById(navbarIconIDs[i]);
+            if (i == tabID) {
+                currTextView.setTextColor(activeTabColor);
+                currImageView.setColorFilter(activeTabColor);
+            } else {
+                if (currTextView.getCurrentTextColor() == activeTabColor) currTextView.setTextColor(colorWhite);
+                currImageView.setColorFilter(colorWhite);
+            }
+        }
     }
 
     public void startSuggestionsActivity(View view) {

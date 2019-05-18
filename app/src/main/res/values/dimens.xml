@@ -18,7 +18,8 @@
     <!--Activity Item Dimensions-->
     <dimen name="activityItemHeight">325dp</dimen>
 
-    <!--User Info Dimensions-->
+    <!--Navbar Dimensions-->
     <dimen name="userInfoNavbarWidth">190dp</dimen>
     <dimen name="userInfoNavbarHeight">216dp</dimen>
+    <dimen name="userInfoNavbarTextSize">20sp</dimen>
 </resources>

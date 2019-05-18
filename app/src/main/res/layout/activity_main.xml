@@ -65,7 +65,7 @@
                             android:gravity="bottom"
                             android:text="Justin Loh"
                             android:textColor="@color/colorWhite"
-                            android:textSize="25sp"
+                            android:textSize="@dimen/userInfoNavbarTextSize"
                             android:textStyle="bold" />
 
                         <TextView
@@ -116,150 +116,164 @@
         android:elevation="-1dp"
         android:background="@color/colorTranslucentBackground" />
 
-    <RelativeLayout
-        android:id="@+id/rl_NavbarContainer"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/rl_UserHeaderContainer"
         android:layout_marginStart="@dimen/cardViewDoubleMargin"
+        android:layout_marginEnd="@dimen/cardViewDoubleMargin"
         android:layout_marginTop="@dimen/cardViewDefaultMargin">
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/cv_Navbar"
-            android:layout_width="@dimen/userInfoNavbarWidth"
-            android:layout_height="@dimen/userInfoNavbarHeight"
-            app:cardCornerRadius="@dimen/cardViewCornerRadius"
-            app:cardElevation="0dp"
-            app:cardBackgroundColor="@color/colorCyan">
+        <RelativeLayout
+            android:id="@+id/rl_NavbarContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.475">
 
-            <LinearLayout
-                android:id="@+id/ll_NavbarInnerContainer"
+            <android.support.v7.widget.CardView
+                android:id="@+id/cv_Navbar"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:padding="@dimen/cardViewDefaultPadding">
+                android:layout_height="@dimen/userInfoNavbarHeight"
+                app:cardCornerRadius="@dimen/cardViewCornerRadius"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/colorCyan">
 
                 <LinearLayout
-                    android:id="@+id/ll_NavbarHomeContainer"
+                    android:id="@+id/ll_NavbarInnerContainer"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="@dimen/cardViewDefaultPadding">
 
-                    <ImageView
-                        android:id="@+id/iv_NavbarHomeIcon"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:layout_marginEnd="@dimen/cardViewDefaultPadding"
-                        android:src="@drawable/ic_home_white_24dp"
-                        android:scaleType="fitCenter"/>
-
-                    <TextView
-                        android:id="@+id/tv_NavbarHomeText"
+                    <LinearLayout
+                        android:id="@+id/ll_NavbarHomeContainer"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:textColor="@color/colorWhite"
-                        android:textStyle="bold"
-                        android:textSize="25sp"
-                        android:text="Home"/>
+                        android:orientation="horizontal">
 
-                </LinearLayout>
+                        <ImageView
+                            android:id="@+id/iv_NavbarHomeIcon"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_marginEnd="@dimen/cardViewDefaultPadding"
+                            android:src="@drawable/ic_home_white_24dp"
+                            android:scaleType="fitCenter"/>
 
-                <LinearLayout
-                    android:id="@+id/ll_NavbarConnectContainer"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/tv_NavbarHomeText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/colorWhite"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/userInfoNavbarTextSize"
+                            android:text="Home"/>
 
-                    <ImageView
-                        android:id="@+id/iv_NavbarConnectIcon"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:layout_marginEnd="@dimen/cardViewDefaultPadding"
-                        android:src="@drawable/ic_people_white_24dp"
-                        android:scaleType="fitCenter"/>
+                    </LinearLayout>
 
-                    <TextView
-                        android:id="@+id/tv_NavbarConnectText"
+                    <LinearLayout
+                        android:id="@+id/ll_NavbarConnectContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/iv_NavbarConnectIcon"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_marginEnd="@dimen/cardViewDefaultPadding"
+                            android:src="@drawable/ic_people_white_24dp"
+                            android:scaleType="fitCenter"/>
+
+                        <TextView
+                            android:id="@+id/tv_NavbarConnectText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/colorWhite"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/userInfoNavbarTextSize"
+                            android:text="Connect"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_NavbarPastActivitiesContainer"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:textColor="@color/colorWhite"
-                        android:textStyle="bold"
-                        android:textSize="25sp"
-                        android:text="Connect"/>
+                        android:orientation="horizontal">
 
-                </LinearLayout>
+                        <ImageView
+                            android:id="@+id/iv_NavbarPastActivitiesIcon"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_marginEnd="@dimen/cardViewDefaultPadding"
+                            android:src="@drawable/ic_access_time_white_24dp"
+                            android:scaleType="fitCenter"/>
 
-                <LinearLayout
-                    android:id="@+id/ll_NavbarPastActivitiesContainer"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/tv_NavbarPastActivitiesText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/colorWhite"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/userInfoNavbarTextSize"
+                            android:text="Past"/>
 
-                    <ImageView
-                        android:id="@+id/iv_NavbarPastActivitiesIcon"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:layout_marginEnd="@dimen/cardViewDefaultPadding"
-                        android:src="@drawable/ic_access_time_white_24dp"
-                        android:scaleType="fitCenter"/>
+                    </LinearLayout>
 
-                    <TextView
-                        android:id="@+id/tv_NavbarPastActivitiesText"
+                    <LinearLayout
+                        android:id="@+id/ll_NavbarSettingsContainer"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:textColor="@color/colorWhite"
-                        android:textStyle="bold"
-                        android:textSize="25sp"
-                        android:text="Past"/>
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/iv_NavbarSettingsIcon"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_marginEnd="@dimen/cardViewDefaultPadding"
+                            android:src="@drawable/ic_settings_white_24dp"
+                            android:scaleType="fitCenter"/>
+
+                        <TextView
+                            android:id="@+id/tv_NavbarSettingsText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/colorWhite"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/userInfoNavbarTextSize"
+                            android:text="Settings"/>
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/ll_NavbarSettingsContainer"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:orientation="horizontal">
+            </android.support.v7.widget.CardView>
 
-                    <ImageView
-                        android:id="@+id/iv_NavbarSettingsIcon"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:layout_marginEnd="@dimen/cardViewDefaultPadding"
-                        android:src="@drawable/ic_settings_white_24dp"
-                        android:scaleType="fitCenter"/>
+            <android.support.v7.widget.CardView
+                android:id="@+id/cv_NavbarShadow"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/userInfoNavbarHeight"
+                android:layout_marginTop="5dp"
+                app:cardElevation="-1dp"
+                app:cardBackgroundColor="@color/colorShadowGray"
+                app:cardCornerRadius="@dimen/cardViewShadowCornerRadius"/>
 
-                    <TextView
-                        android:id="@+id/tv_NavbarSettingsText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:textColor="@color/colorWhite"
-                        android:textStyle="bold"
-                        android:textSize="25sp"
-                        android:text="Settings"/>
+        </RelativeLayout>
 
-                </LinearLayout>
+        <View
+            android:layout_width="0dp"
+            android:layout_weight="0.525"
+            android:layout_height="match_parent"
+            android:background="@color/colorTransparent"/>
 
-            </LinearLayout>
-
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/cv_NavbarShadow"
-            android:layout_width="@dimen/userInfoNavbarWidth"
-            android:layout_height="@dimen/userInfoNavbarHeight"
-            android:layout_marginTop="5dp"
-            app:cardElevation="-1dp"
-            app:cardBackgroundColor="@color/colorShadowGray"
-            app:cardCornerRadius="@dimen/cardViewShadowCornerRadius"/>
-
-    </RelativeLayout>
+    </LinearLayout>
 
     <!--Floating Action Button-->
     <ImageButton
