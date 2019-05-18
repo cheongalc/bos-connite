@@ -11,12 +11,16 @@ class QuestionnaireDataClass {
     RelativeLayout bmiFragmentRootView;
     Integer height;
     Integer weight;
+    Float bmiWeight;
 
     RelativeLayout activenessFragmentRootView;
+    Integer activeness;
+    Float activenessWeight;
 
     RelativeLayout socialFragmentRootView;
 
     RelativeLayout financialFragmentRootView;
 
     RelativeLayout sportsFragmentRootView;
+
 }

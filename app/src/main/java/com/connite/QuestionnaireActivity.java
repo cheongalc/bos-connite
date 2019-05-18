@@ -84,6 +84,30 @@ public class QuestionnaireActivity extends AppCompatActivity {
     }
 
     private void processQuestionnaireData() {
+        
+    }
 
+    private double computeAgeGroupWeight (Integer ageGroup) {
+        double ageGroupWeight = 0.0;
+
+        switch (ageGroup) {
+            case 0:
+                ageGroupWeight = 0.8;
+                break;
+            case 1:
+                ageGroupWeight = 1.0;
+                break;
+            case 2:
+                ageGroupWeight = 0.7;
+                break;
+            case 3:
+                ageGroupWeight = 0.6;
+                break;
+            case 4:
+                ageGroupWeight = 0.5;
+                break;
+        }
+
+        return ageGroupWeight;
     }
 }
