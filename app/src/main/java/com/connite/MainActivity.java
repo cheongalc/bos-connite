@@ -51,13 +51,13 @@ public class MainActivity extends AppCompatActivity implements FragmentInterface
         rl_userInfoNavbarContainer.setVisibility(View.GONE);
         CardView cv_userHeaderCard = findViewById(R.id.cv_UserHeaderCard);
         cv_userHeaderCard.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View view) { toggleNavbar(); }});
-        LinearLayout ll_NavbarHomeContainer = findViewById(R.id.ll_NavbarHomeContainer);
+        RelativeLayout ll_NavbarHomeContainer = findViewById(R.id.ll_NavbarHomeContainer);
         ll_NavbarHomeContainer.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View view) { showFragment("Home"); }});
-        LinearLayout ll_NavbarConnectContainer = findViewById(R.id.ll_NavbarConnectContainer);
+        RelativeLayout ll_NavbarConnectContainer = findViewById(R.id.ll_NavbarConnectContainer);
         ll_NavbarConnectContainer.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View view) { showFragment("Connect"); }});
-        LinearLayout ll_NavbarPastActivitiesContainer = findViewById(R.id.ll_NavbarPastActivitiesContainer);
+        RelativeLayout ll_NavbarPastActivitiesContainer = findViewById(R.id.ll_NavbarPastActivitiesContainer);
         ll_NavbarPastActivitiesContainer.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View view) { showFragment("PastActivities"); }});
-        LinearLayout ll_NavbarSettingsContainer = findViewById(R.id.ll_NavbarSettingsContainer);
+        RelativeLayout ll_NavbarSettingsContainer = findViewById(R.id.ll_NavbarSettingsContainer);
         ll_NavbarSettingsContainer.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View view) { showFragment("Settings"); }});
 
 //        Initialize fragment management
