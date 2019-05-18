@@ -21,4 +21,6 @@
     <color name="colorShadowGray">#E7E5E6</color>
     <color name="colorLightGray">#9EA8AA</color>
     <color name="colorCyan">#96D8D7</color>
+    <color name="colorDarkGray">#313131</color>
 </resources>
+

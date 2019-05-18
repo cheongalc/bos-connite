@@ -22,7 +22,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SuggestionsActivity" />
+        <activity android:name=".SuggestionsActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>
         <activity android:name=".QuestionnaireActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>
         <activity
