@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_SocialFragmentContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <android.support.v7.widget.CardView
+        android:id="@+id/cv_SocialFragmentCard"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="10dp"
@@ -12,43 +14,58 @@
         app:cardCornerRadius="@dimen/cardViewCornerRadius">
 
         <LinearLayout
+            android:id="@+id/ll_SocialFragmentInnerContainer"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/iv_SocialIcon"
                 android:layout_width="250dp"
-                android:layout_height="250dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.29"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"
                 android:src="@mipmap/social"
                 />
 
             <TextView
+                android:id="@+id/tv_SocialQuestion"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="0.2"
                 android:layout_margin="10dp"
                 android:text="How sociable are you?"
                 android:textAlignment="center"
                 android:textColor="@color/colorWhite"
                 android:textSize="35sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:gravity="center"
+                android:autoSizeMaxTextSize="35sp"
+                android:autoSizeMinTextSize="20sp"
+                android:autoSizeTextType="uniform"/>
 
             <View
+                android:id="@+id/v_SocialDivider"
                 android:layout_width="match_parent"
-                android:layout_height="5dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.01"
                 android:layout_margin="10dp"
                 android:background="@color/colorWhite" />
 
             <LinearLayout
+                android:id="@+id/ll_SocialOptionsContainer"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
                 android:layout_gravity="center_horizontal"
-                android:layout_margin="30dp"
                 android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
                 android:orientation="vertical">
 
                 <SeekBar
+                    android:id="@+id/sb_SocialScale"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:progress="50"
