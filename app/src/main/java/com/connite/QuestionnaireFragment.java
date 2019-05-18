@@ -1,6 +1,7 @@
 package com.connite;
 
 import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -15,6 +16,8 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
+import android.widget.SeekBar;
+import android.widget.TextView;
 
 public class QuestionnaireFragment extends Fragment {
     public RelativeLayout rootLayout;
@@ -58,6 +61,29 @@ public class QuestionnaireFragment extends Fragment {
             case 3:
                 viewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_questionaire_social, container, false);
                 activity.dataClass.socialFragmentRootView = (RelativeLayout) viewGroup;
+                final TextView tv_SocialScaleNumber = viewGroup.findViewById(R.id.tv_SocialScaleNumber);
+                SeekBar sb_SocialScale = viewGroup.findViewById(R.id.sb_SocialScale);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    sb_SocialScale.setMin(0);
+                }
+                sb_SocialScale.setMax(10);
+                sb_SocialScale.setProgress(5);
+                sb_SocialScale.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+                    @Override
+                    public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                        tv_SocialScaleNumber.setText(String.valueOf(i));
+                    }
+
+                    @Override
+                    public void onStartTrackingTouch(SeekBar seekBar) {
+
+                    }
+
+                    @Override
+                    public void onStopTrackingTouch(SeekBar seekBar) {
+
+                    }
+                });
                 break;
             case 4:
                 viewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_questionaire_sports, container, false);

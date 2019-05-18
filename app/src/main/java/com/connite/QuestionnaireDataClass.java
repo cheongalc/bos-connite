@@ -5,13 +5,12 @@ import android.widget.RelativeLayout;
 class QuestionnaireDataClass {
 
     RelativeLayout ageGroupFragmentRootView;
-    Integer ageGroupWeight;
-    Integer ageGroup;
+    int ageGroupWeight;
+    int ageGroup;
 
     RelativeLayout bmiFragmentRootView;
-    Integer height;
-    Integer weight;
-    Float bmiWeight;
+    int height;
+    int weight;
 
     RelativeLayout activenessFragmentRootView;
     Integer activeness;

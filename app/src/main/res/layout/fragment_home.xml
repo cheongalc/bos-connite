@@ -22,4 +22,19 @@
 
     </ScrollView>
 
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tv_PlaceholderHomeFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Tap on the button on the bottom right to add some activities!"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:textColor="@color/colorLinkBlue"
+        android:gravity="center"
+        android:autoSizeMaxTextSize="30sp"
+        android:autoSizeMinTextSize="20sp"
+        android:autoSizeTextType="uniform"/>
+
 </RelativeLayout>
