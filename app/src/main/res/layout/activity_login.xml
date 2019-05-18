@@ -20,22 +20,36 @@
             android:layout_marginBottom="50dp"
             android:src="@mipmap/connite_icon_experimental" />
 
-
-        <Button
-            android:id="@+id/btn_GoogleSignInButton"
-            style="?android:attr/borderlessButtonStyle"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:drawableStart="@drawable/google_logo"
-            android:drawablePadding="10dp"
-            android:drawableTint="@color/colorWhite"
-            android:elevation="0dp"
-            android:padding="10dp"
-            android:text="Login"
-            android:textAllCaps="false"
-            android:textColor="@color/colorWhite"
-            android:textSize="50sp" />
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:tint="@color/colorWhite"
+                android:src="@mipmap/google_logo" />
+
+
+            <Button
+                android:id="@+id/btn_GoogleSignInButton"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:elevation="0dp"
+                android:padding="5dp"
+                android:text="Login"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:textSize="35sp" />
+
+
+        </LinearLayout>
 
 
     </LinearLayout>
