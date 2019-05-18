@@ -123,6 +123,18 @@ public class MainActivity extends AppCompatActivity implements FragmentInterface
                 .requestEmail()
                 .build();
         googleSignInClient = GoogleSignIn.getClient(this, gso);
+
+//        FirebaseHandler.addCurrentActivity(new ActivityItemData(
+//                "Swimming",
+//                "Swimming builds endurance, muscle strength, and maintains a healthy heart and lungs.",
+//                "Lorong 6 Toa Payoh, Swimming Complex, Singapore 319392",
+//                1.330613,
+//                103.850156,
+//                "https://lh5.googleusercontent.com/p/AF1QipNG0TFYMjChYBEpanHyTTffOBF-UQkPAvB7E9zi=w203-h114-k-no",
+//                "6969696"));
+
+        FirebaseHandler.moveCurrentActivitiesToPast();
+
     }
 
     public void showFragment(String fragmentName, RelativeLayout container) {

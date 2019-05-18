@@ -11,6 +11,10 @@ public class ActivityItemData {
     private double longitude;
     private String imageUrl;
 
+    public ActivityItemData() {
+
+    }
+
     public ActivityItemData(String name, String description, String namedLocation, double latitude, double longitude, String imageUrl, String placeId) {
         this.name = name;
         this.description = description;

@@ -2,6 +2,7 @@ package com.connite;
 
 import android.preference.Preference;
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -29,6 +30,7 @@ class FirebaseHandler {
     }
 
     static void addCurrentActivity (ActivityItemData currentActivity) {
+        Log.d("userRef", userRef+"");
         userRef.child("activityQueue").child(currentActivity.getPlaceId()).setValue(currentActivity);
     }
 
@@ -37,7 +39,7 @@ class FirebaseHandler {
     }
 
     static void addPastActivity (ActivityItemData pastActivity) {
-        userRef.child("activityQueue").child(pastActivity.getPlaceId()).setValue(pastActivity);
+        userRef.child("pastActivities").child(pastActivity.getPlaceId()).setValue(pastActivity);
     }
 
     static void addPastActivities (ArrayList<ActivityItemData> pastActivities) {

@@ -1,6 +1,7 @@
 package com.connite;
 
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -11,14 +12,14 @@ import java.util.ArrayList;
 public class FirebaseGetActivitiesClass {
     // Listener defined earlier
     public interface MyCustomObjectListener {
-        public void onActivitiesLoaded(ArrayList<ActivityItemData> activityList);
+        void onActivitiesLoaded(ArrayList<ActivityItemData> activityList);
     }
 
     // Member variable was defined earlier
     private MyCustomObjectListener listener;
 
     // Constructor where listener events are ignored
-    public void FirebaseGetActivitiesClass() {
+    FirebaseGetActivitiesClass() {
         // set null or default listener or accept as argument to constructor
         this.listener = null;
         loadDataAsync();
@@ -39,6 +40,7 @@ public class FirebaseGetActivitiesClass {
                 }
 
                 if(listener != null) {
+                    Log.d("fuck", dataSnapshot+"");
                     listener.onActivitiesLoaded(activityList);
                 }
 
