@@ -71,7 +71,9 @@ public class LoginActivity extends AppCompatActivity {
             Log.d(LOG_TAG, "The user has already signed in.");
             GlobalVariables.user = firebaseAuth.getCurrentUser();
             updateUserInfo();
-            startMainActivity();
+            startQuestionnaireActivity();
+//            if (checkFirstTimeRun()) startQuestionnaireActivity();
+//            else startMainActivity();
         } else {
 //            the user has not signed in yet. show the login progress overlay.
             rl_LoginProgressOverlay = findViewById(R.id.rl_LoginProgressOverlay);
@@ -153,6 +155,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private boolean checkFirstTimeRun() {
         SharedPreferences sharedPreferences = this.getSharedPreferences("ConniteSharedPreferences", Context.MODE_PRIVATE);
+        Log.d(LOG_TAG, String.valueOf(sharedPreferences.getBoolean("isAppFirstTimeRun", false)));
         if (sharedPreferences.contains("isAppFirstTimeRun")) {
             // isAppFirstTimeRun has been defined before, hence it is NOT the first run
             return false;
