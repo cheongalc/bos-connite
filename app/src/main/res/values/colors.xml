@@ -2,10 +2,12 @@
 <resources>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">#FFBDB2</color>
     <color name="colorWhite">#ffffff</color>
     <color name="colorNavyBlue">#272830</color>
+    <color name="colorGreenishBlue">#00ABC3</color>
     <color name="colorGreenish">#D2FFB7</color>
+    <color name="progressBarPink">#FFBDB2</color>
     <color name="colorLinkBlue">#8091BE</color>
     <color name="colorBlack">#000000</color>
     <color name="colorTransparent">@android:color/transparent</color>

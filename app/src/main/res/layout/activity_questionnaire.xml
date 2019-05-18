@@ -5,5 +5,80 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <LinearLayout
+        android:id="@+id/questionnaire_top_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ImageView
+            android:layout_weight="0.5"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_help_black_24dp"
+            android:tint="@color/colorGreenishBlue" />
+
+        <LinearLayout
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0.7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="Tell us about yourself!"
+                android:textAlignment="center"
+                android:textColor="@color/colorGreenishBlue"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <ProgressBar
+                android:id="@+id/pb_questionnaire_progress"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:progress="60"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:layout_below="@+id/questionnaire_top_container"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_above="@+id/bottom_control"
+        />
+
+    <RelativeLayout
+        android:layout_height="wrap_content"
+        android:id="@+id/bottom_control"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent">
+
+        <Button
+            android:drawablePadding="10dp"
+            android:textSize="25sp"
+            android:drawableTint="@color/colorGreenishBlue"
+            android:textColor="@color/progressBarPink"
+            android:textAllCaps="false"
+            android:text="Next"
+            android:drawableEnd="@drawable/ic_arrow_forward_black_24dp"
+            style="?attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity=""
+            android:src="" />
+
+    </RelativeLayout>
+
 
 </RelativeLayout>
