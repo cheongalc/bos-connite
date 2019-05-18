@@ -25,6 +25,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -33,6 +35,9 @@ public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private GoogleSignInClient googleSignInClient;
     private static int signInRequestCode = 666;
+    private DatabaseReference firebaseRoot;
+    private DatabaseReference firebaseUserDirectory;
+    private FirebaseDatabase database;
 
     private RelativeLayout rl_LoginProgressOverlay;
 
@@ -49,9 +54,14 @@ public class LoginActivity extends AppCompatActivity {
                 .build();
         googleSignInClient = GoogleSignIn.getClient(this, gso);
         firebaseAuth = FirebaseAuth.getInstance();
+//        init firebase database
+        database = FirebaseDatabase.getInstance();
+        firebaseRoot = database.getReference();
+        firebaseUserDirectory = firebaseRoot.child("Users");
 
         if (firebaseAuth.getCurrentUser() != null) {
 //            this means that the user has already signed in. move to mainactivity
+            GlobalVariables.user = firebaseAuth.getCurrentUser();
             startMainActivity();
         } else {
 //            the user has not signed in yet. show the login progress overlay.
@@ -109,7 +119,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
 //                            Successfully signed in to firebase
-                            FirebaseUser user = firebaseAuth.getCurrentUser();
+                            GlobalVariables.user = firebaseAuth.getCurrentUser();
                             startMainActivity();
                             Toast.makeText(LoginActivity.this, "Successfully signed in to Firebase with Google!", Toast.LENGTH_SHORT).show();
                         } else {
