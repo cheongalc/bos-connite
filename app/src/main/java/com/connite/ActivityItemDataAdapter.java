@@ -68,9 +68,13 @@ public class ActivityItemDataAdapter extends ArrayAdapter<ActivityItemData> {
         TextView name;
         TextView description;
         TextView namedLocation;
-        ImageView icon;
         Button navigateButton;
+        ImageView icon;
     }
+
+
+
+
 }
 
 

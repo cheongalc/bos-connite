@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/cardViewDefaultMargin"
+    android:paddingStart="@dimen/cardViewDoubleMargin"
+    android:paddingEnd="@dimen/cardViewDoubleMargin"
+    android:paddingBottom="@dimen/cardViewDefaultPadding">
+
+    <android.support.v7.widget.CardView
+        app:cardElevation="0dp"
+        android:id="@+id/cv_UserCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/progressBarPink"
+        app:cardCornerRadius="@dimen/navBarCornerRadius">
+
+        <LinearLayout
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/civ_UserProfileImage"
+                android:layout_width="0dp"
+                android:layout_weight="0.2"
+                android:layout_height="60dp"
+                android:src="@mipmap/chika"/>
+
+            <LinearLayout
+                android:paddingStart="10dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.8"
+                android:id="@+id/ll_UserHeaderTextInnerContainer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_UserName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="bottom"
+                    android:text="千花藤原"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/userInfoNavbarTextSize"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:ellipsize="end"/>
+
+                <TextView
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    android:id="@+id/tv_UserSub"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:text="Professional Rapper "
+                    android:textColor="@color/colorWhite"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <!--Shadow CardView-->
+    <View
+        android:id="@+id/alignView"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@+id/cv_UserCard"/>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_alignTop="@+id/alignView"
+        android:layout_height="41dp"
+        android:layout_marginTop="5dp"
+        app:cardCornerRadius="@dimen/navBarShadowCronerRadius"
+        app:cardElevation="-1dp"
+        app:cardBackgroundColor="@color/colorShadowGray"/>
+</RelativeLayout>

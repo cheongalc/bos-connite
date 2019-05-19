@@ -164,5 +164,7 @@ public class LoginActivity extends AppCompatActivity {
     private void updateUserInfo() {
         DatabaseReference firebaseUserReference = GlobalVariables.root.child(GlobalVariables.user.getUid());
         firebaseUserReference.child("email").setValue(GlobalVariables.user.getEmail());
+        firebaseUserReference.child("profileUrl").setValue(GlobalVariables.user.getPhotoUrl()+"");
+        firebaseUserReference.child("name").setValue(GlobalVariables.user.getDisplayName());
     }
 }
