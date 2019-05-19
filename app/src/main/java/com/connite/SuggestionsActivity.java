@@ -72,11 +72,38 @@ public class SuggestionsActivity extends AppCompatActivity implements Suggestion
             Log.e(LOG_TAG, "Security exception: ", e.getCause());
         }
 
-        try {
-            sendReqToLambda();
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+        ArrayList<ActivityItemData> arrayList = new ArrayList<>();
+        Log.d("GlobalRoot", FirebaseHandler.reference.child("Data")+"");
+        FirebaseHandler.reference.child("Data").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Log.d("dataSnapshot", dataSnapshot+"");
+                for (DataSnapshot child : dataSnapshot.getChildren()) {
+                    arrayList.add(new ActivityItemData(
+                            String.valueOf(child.child("title").getValue()),
+                            child.child("description").getValue() + "",
+                            child.child("adrText").getValue()+ "",
+                            (double) child.child("adrCoordinate").child("lat").getValue(),
+                            (double) child.child("adrCoordinate").child("lng").getValue(),
+                            child.child("photo_reference").getValue()+"",
+                            child.child("id").getValue()+"",
+                            Integer.parseInt(child.child("costIndex").getValue()+"")
+                    ));
+                }
+                initViewPager(arrayList);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+//        try {
+//            //sendReqToLambda();
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
 
         LinearLayout ll_SuggestionsActivityCloseHorizontalContainer = findViewById(R.id.ll_SuggestionsActivityCloseHorizontalContainer);
         ll_SuggestionsActivityCloseHorizontalContainer.setOnClickListener(view -> {
@@ -102,6 +129,24 @@ public class SuggestionsActivity extends AppCompatActivity implements Suggestion
 
     private ArrayList<ActivityItemData> sendReqToLambda() throws JSONException {
         final ArrayList<ActivityItemData> arrayList = new ArrayList<>();
+//        GlobalVariables.root.child("data").addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                Log.d("dataChange", "called");
+//                for (DataSnapshot child : dataSnapshot.getChildren()) {
+//                    Log.d("child", child.getValue()+"");
+//                    arrayList.add(child.getValue(ActivityItemData.class));
+//                }
+//                initViewPager(arrayList);
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
+//        return arrayList;
+
         final JSONObject postJSON = new JSONObject();
 //        double userLatitude = GlobalVariables.userLocation.getLatitude();
 //        double userLongitude = GlobalVariables.userLocation.getLongitude();
@@ -125,10 +170,10 @@ public class SuggestionsActivity extends AppCompatActivity implements Suggestion
                         protected Object doInBackground(Object[] objects) {
                             Log.w(LOG_TAG, "SENDING STUFF TO LAMBDA");
                             RequestBody body = RequestBody.create(JSON, postJSON.toString());
+                            Log.w(LOG_TAG, postJSON.toString());
                             Request request = new Request.Builder()
-                                    .url("https://i7gamrq0o7.execute-api.ap-southeast-1.amazonaws.com/prod/")
-                                    .header("Content-Type", "application/json; charset=utf-8")
-                                    .header("Host", "i7gamrq0o7.execute-api.ap-southeast-1.amazonaws.com")
+                                    .url("https://gentle-mountain-61966.herokuapp.com/recommendations")
+                                    .header("Content-Type", "application/json")
                                     .post(body)
                                     .build();
                             try {
@@ -174,31 +219,12 @@ public class SuggestionsActivity extends AppCompatActivity implements Suggestion
 
             }
         });
-//        for (int i = 0; i < 5; i++) {
-//            arrayList.add(new ActivityItemData(
-//                    "Swimming",
-//                    "Swimming builds endurance, muscle strength, and maintains a healthy heart and lungs.",
-//                    "Lorong 6 Toa Payoh, Swimming Complex, Singapore 319392",
-//                    1.330613,
-//                    103.850156,
-//                    "https://lh5.googleusercontent.com/p/AF1QipNG0TFYMjChYBEpanHyTTffOBF-UQkPAvB7E9zi=w203-h114-k-no",
-//                    "6969696",
-//                    2));
-//            arrayList.add(new ActivityItemData(
-//                    "Cycling",
-//                    "Swimming builds endurance, muscle strength, and maintains a healthy heart and lungs.",
-//                    "Lorong 6 Toa Payoh, Swimming Complex, Singapore 319392",
-//                    1.330613,
-//                    103.850156,
-//                    "https://lh5.googleusercontent.com/p/AF1QipNG0TFYMjChYBEpanHyTTffOBF-UQkPAvB7E9zi=w203-h114-k-no",
-//                    "6969696",
-//                    2));
-//        }
         return arrayList;
     }
 
     @Override
     public void onSuggestionAction(ActivityItemData currActivityItem, boolean isAccepted) {
+        Log.d(LOG_TAG, String.valueOf(currActivityItem));
         if (isAccepted) {
             // suggestion has been accepted
             if (!acceptedSuggestionsList.contains(currActivityItem)) {

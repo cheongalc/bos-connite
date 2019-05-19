@@ -19,7 +19,7 @@ import javax.security.auth.callback.Callback;
 class FirebaseHandler {
 
     static FirebaseDatabase database = GlobalVariables.database;
-    private static DatabaseReference reference = GlobalVariables.root;
+    static DatabaseReference reference = GlobalVariables.root;
     private static FirebaseUser user = GlobalVariables.user;
     static DatabaseReference userRef = reference.child(user.getUid());
 

@@ -17,6 +17,8 @@ public class ActivityItemData implements Parcelable {
     private String photoReference;
     private int costLevel;
 
+    public ActivityItemData(){}
+
     public ActivityItemData(JSONObject object) throws JSONException {
         this.name = object.getString("title");
         this.placeId = object.getString("id");
@@ -28,23 +30,13 @@ public class ActivityItemData implements Parcelable {
         this.longitude = innerObject.getDouble("lng");
     }
 
-    public ActivityItemData(String name, String description, String namedLocation, double latitude, double longitude, String imageUrl, String placeId) {
+    public ActivityItemData(String name, String description, String namedLocation, double latitude, double longitude, String photoReference, String placeId, int costLevel) {
         this.name = name;
         this.description = description;
         this.namedLocation = namedLocation;
         this.latitude = latitude;
         this.longitude = longitude;
-//        this.imageUrl = imageUrl;
-        this.placeId = placeId;
-    }
-
-    public ActivityItemData(String name, String description, String namedLocation, double latitude, double longitude, String imageUrl, String placeId, int costLevel) {
-        this.name = name;
-        this.description = description;
-        this.namedLocation = namedLocation;
-        this.latitude = latitude;
-        this.longitude = longitude;
-//        this.imageUrl = imageUrl;
+        this.photoReference = photoReference;
         this.placeId = placeId;
         this.costLevel = costLevel;
     }
@@ -56,6 +48,7 @@ public class ActivityItemData implements Parcelable {
         namedLocation = in.readString();
         latitude = in.readDouble();
         longitude = in.readDouble();
+        photoReference = in.readString();
         costLevel = in.readInt();
     }
 
@@ -93,8 +86,12 @@ public class ActivityItemData implements Parcelable {
         return longitude;
     }
 
+    public String getPhotoReference() {
+        return photoReference;
+    }
+
     public String getImageUrl() {
-        return "https://maps.googleapis.com/maps/api/place/photo?" + "photoReference=" + photoReference +  "&key=AIzaSyBqAcEs-fZ1sDsVuw0bZSJoyYkPzECDDWA";
+        return "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1000&maxheight=1000&photoreference=" + photoReference +  "&key=AIzaSyDcGUNcwyxIkZitgAw74282XMKjcMSavKM";
     }
 
     public int getCostLevel() {
