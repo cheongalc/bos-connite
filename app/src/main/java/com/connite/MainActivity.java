@@ -132,9 +132,6 @@ public class MainActivity extends AppCompatActivity implements FragmentInterface
 //                103.850156,
 //                "https://lh5.googleusercontent.com/p/AF1QipNG0TFYMjChYBEpanHyTTffOBF-UQkPAvB7E9zi=w203-h114-k-no",
 //                "6969696"));
-
-        FirebaseHandler.moveCurrentActivitiesToPast();
-
     }
 
     public void showFragment(String fragmentName, RelativeLayout container) {
@@ -187,6 +184,7 @@ public class MainActivity extends AppCompatActivity implements FragmentInterface
     }
 
     public void startSuggestionsActivity(View view) {
+        finish();
         Intent intent = new Intent(this, SuggestionsActivity.class);
         startActivity(intent);
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);

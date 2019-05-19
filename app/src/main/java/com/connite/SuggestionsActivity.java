@@ -107,9 +107,10 @@ public class SuggestionsActivity extends AppCompatActivity implements Suggestion
 
         LinearLayout ll_SuggestionsActivityCloseHorizontalContainer = findViewById(R.id.ll_SuggestionsActivityCloseHorizontalContainer);
         ll_SuggestionsActivityCloseHorizontalContainer.setOnClickListener(view -> {
-            updateAcceptedSuggestions();
-            finish();
+            Intent intent = new Intent(SuggestionsActivity.this, MainActivity.class);
+            startActivity(intent);
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+            finish();
         });
     }
 
@@ -121,10 +122,6 @@ public class SuggestionsActivity extends AppCompatActivity implements Suggestion
         suggestionViewPagerAdapter = new SuggestionViewPagerAdapter(getSupportFragmentManager(), numOfPages, relevantSuggestionsList);
         nsvp_SuggestionsViewPager.setAdapter(suggestionViewPagerAdapter);
         nsvp_SuggestionsViewPager.setCurrentItem(0);
-    }
-
-    private void updateAcceptedSuggestions() {
-
     }
 
     private ArrayList<ActivityItemData> sendReqToLambda() throws JSONException {
