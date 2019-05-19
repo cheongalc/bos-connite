@@ -30,7 +30,7 @@ public class ConnectFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for(DataSnapshot child : dataSnapshot.getChildren()){
-                    if(!(child.child("email").getValue() + "").equals(GlobalVariables.user.getEmail())) {
+                    if(!(child.child("email").getValue() + "").equals(GlobalVariables.user.getEmail()) && !(child.getKey() + "").equals("Data")) {
                         Log.d("curEmail", GlobalVariables.user.getEmail());
                         Log.d("gottenEmail", (child.child("email").getValue()+"" != GlobalVariables.user.getEmail())+"");
                         userList.add(new UserClass(
