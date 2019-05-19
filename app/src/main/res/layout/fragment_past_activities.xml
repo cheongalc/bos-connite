@@ -9,9 +9,15 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="PAST ACTIVITIES FRAGMENT"
-        android:textSize="50sp"
-        android:textAlignment="center"
+        android:text="Your completed Activities will be shown here."
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:textColor="@color/colorLinkBlue"
+        android:layout_margin="@dimen/cardViewDoubleMargin"
+        android:gravity="center"
+        android:autoSizeMaxTextSize="30sp"
+        android:autoSizeMinTextSize="20sp"
+        android:autoSizeTextType="uniform"
         android:layout_centerInParent="true"/>
 
 </RelativeLayout>

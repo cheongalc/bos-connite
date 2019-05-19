@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="Notifications">
+        <SwitchPreference
+            android:title="Toggle Notifications"
+            android:summaryOn="Notifications are enabled."
+            android:summaryOff="Notifications are disabled." />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="Account Information">
+        <Preference android:title="Retake User Questionnaire" />
+        <Preference android:title="View User Weights" />
+        <Preference android:title="Add User Sub" />
+    </PreferenceCategory>
+</PreferenceScreen>
