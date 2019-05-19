@@ -27,7 +27,7 @@ public class HomeFragment extends Fragment {
 
 //        make the request to firebase to fetch the user's activity queue
         final ArrayList<ActivityItemData> arrayList = new ArrayList<>();
-        FirebaseHandler.userRef.child("activityQueue").addValueEventListener(new ValueEventListener() {
+        FirebaseHandler.userRef.child("activityQueue").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 arrayList.clear();
