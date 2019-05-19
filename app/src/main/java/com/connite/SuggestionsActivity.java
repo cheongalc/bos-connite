@@ -169,7 +169,7 @@ public class SuggestionsActivity extends AppCompatActivity implements Suggestion
                             RequestBody body = RequestBody.create(JSON, postJSON.toString());
                             Log.w(LOG_TAG, postJSON.toString());
                             Request request = new Request.Builder()
-                                    .url("https://gentle-mountain-61966.herokuapp.com/recommendations")
+                                    .url("https://stark-peak-30569.herokuapp.com/recommendations")
                                     .header("Content-Type", "application/json")
                                     .post(body)
                                     .build();
