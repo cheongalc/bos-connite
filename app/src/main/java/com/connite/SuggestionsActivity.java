@@ -126,7 +126,7 @@ public class SuggestionsActivity extends AppCompatActivity implements Suggestion
 
     private ArrayList<ActivityItemData> sendReqToLambda() throws JSONException {
         final ArrayList<ActivityItemData> arrayList = new ArrayList<>();
-//        GlobalVariables.root.child("data").addListenerForSingleValueEvent(new ValueEventListener() {
+//        GlobalVariables.root.child("Data").addListenerForSingleValueEvent(new ValueEventListener() {
 //            @Override
 //            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 //                Log.d("dataChange", "called");
@@ -169,7 +169,7 @@ public class SuggestionsActivity extends AppCompatActivity implements Suggestion
                             RequestBody body = RequestBody.create(JSON, postJSON.toString());
                             Log.w(LOG_TAG, postJSON.toString());
                             Request request = new Request.Builder()
-                                    .url("https://stark-peak-30569.herokuapp.com/recommendations")
+                                    .url("https://stark-peak-30569.herokuapp.com/reco")
                                     .header("Content-Type", "application/json")
                                     .post(body)
                                     .build();
