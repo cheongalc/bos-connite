@@ -49,7 +49,7 @@ public class ActivityItemDataAdapter extends ArrayAdapter<ActivityItemData> {
         viewHolder.name.setText(currActivityItem.getName());
         viewHolder.description.setText(currActivityItem.getDescription());
         viewHolder.namedLocation.setText(currActivityItem.getNamedLocation());
-        Glide.with(context).load(currActivityItem.getImageUrl()).placeholder(R.mipmap.chika).into(viewHolder.icon);
+        Glide.with(context).load(currActivityItem.getImageUrl()).placeholder(R.color.progressBarPink).into(viewHolder.icon);
         final double activityItemLatitude = currActivityItem.getLatitude();
         final double activityItemLongitude = currActivityItem.getLongitude();
         viewHolder.navigateButton.setOnClickListener(new View.OnClickListener() {
